@@ -1,0 +1,39 @@
+.hero {
+	&__title {
+		@include adaptive-font(57, 20);
+		margin: 0;
+		margin-bottom: 40px;
+		font-weight: 500;
+		line-height: 66px;
+		text-align: right;
+		text-transform: uppercase;
+
+		@media (min-width: 1250px) {
+			font-size: 56px;
+		}
+	}
+
+	&__wrap {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+	}
+
+	&__left {
+		display: flex;
+	}
+
+	&__img {
+		margin-right: 16px;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__text {
+		max-width: 270px;
+	}
+}

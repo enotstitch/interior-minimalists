@@ -1,0 +1,89 @@
+.section {
+	padding: 60px 0;
+
+	&-hero {
+		padding-top: 40px;
+	}
+}
+
+.title {
+	@include adaptive-font(40, 20);
+	margin: 0;
+	margin-bottom: 50px;
+	font-weight: 500;
+	line-height: 46px;
+	text-transform: uppercase;
+
+	@media (min-width: 1250px) {
+		font-size: 40px;
+	}
+}
+
+.text {
+	margin: 0;
+	line-height: 20px;
+}
+
+.socials {
+	min-width: 363px;
+
+	&__item {
+		border-bottom: 1px solid var(--light-gray-color);
+
+		&:first-child {
+			border-top: 1px solid var(--light-gray-color);
+		}
+	}
+
+	&__link {
+		@include adaptive-font(24, 14);
+		display: inline-block;
+		padding: 17px 41px;
+		width: 100%;
+		font-weight: 400;
+		background-image: url('@img/icons/sprite.svg#arrow');
+		background-position: right 41px top 50%;
+		background-size: 15px;
+		background-repeat: no-repeat;
+		transition: opacity 0.25s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+
+.link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--gray-color);
+	padding: 28px 78px;
+	transition: opacity 0.25s;
+
+	&__text {
+		margin-right: 20px;
+	}
+
+	&__svg {
+		width: 15px;
+		height: 15px;
+	}
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.bid {
+	max-width: 363px;
+
+	&__text {
+		margin-bottom: 16px;
+		max-width: 240px;
+	}
+
+	&__img {
+		margin-bottom: 20px;
+	}
+}

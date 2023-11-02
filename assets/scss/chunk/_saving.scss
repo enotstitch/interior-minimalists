@@ -1,0 +1,29 @@
+.saving {
+	&__title {
+		max-width: 870px;
+	}
+
+	&__wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: end;
+		justify-content: space-between;
+	}
+
+	&__left {
+		margin-right: 16px;
+	}
+
+	&__right {
+		max-width: 363px;
+	}
+
+	&__subtitle {
+		@include adaptive-font(16, 14);
+		margin: 0;
+		margin-bottom: 30px;
+		font-weight: 500;
+		line-height: 20px;
+		text-transform: uppercase;
+	}
+}

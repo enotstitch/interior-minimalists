@@ -6,6 +6,19 @@
 	}
 }
 
+.title {
+	@include adaptive-font(40, 20);
+	margin: 0;
+	margin-bottom: 50px;
+	font-weight: 500;
+	line-height: 46px;
+	text-transform: uppercase;
+
+	@media (min-width: 1250px) {
+		font-size: 40px;
+	}
+}
+
 .text {
 	margin: 0;
 	line-height: 20px;

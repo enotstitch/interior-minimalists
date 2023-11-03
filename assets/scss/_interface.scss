@@ -56,6 +56,15 @@
 			opacity: 0.5;
 		}
 	}
+
+	&--mobile {
+		display: none;
+		min-width: 100%;
+
+		@media (max-width: 768px) {
+			display: block;
+		}
+	}
 }
 
 .link {

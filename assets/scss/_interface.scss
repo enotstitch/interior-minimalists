@@ -87,3 +87,28 @@
 		margin-bottom: 20px;
 	}
 }
+
+.table {
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	&__subtitle {
+		margin: 0;
+		padding-top: 20px;
+		padding-bottom: 40px;
+		font-weight: 500;
+		line-height: 20px;
+		text-transform: uppercase;
+		color: var(--dark-color);
+	}
+
+	&__text {
+		border-bottom: 1px solid var(--light-gray-color);
+		padding-top: 20px;
+		padding-bottom: 40px;
+		max-width: 830px;
+	}
+}

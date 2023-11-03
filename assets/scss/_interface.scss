@@ -33,10 +33,10 @@
 	min-width: 363px;
 
 	&__item {
-		border-bottom: 1px solid var(--light-gray-color);
+		border-top: 1px solid var(--light-gray-color);
 
 		&:first-child {
-			border-top: 1px solid var(--light-gray-color);
+			border-bottom: 1px solid var(--light-gray-color);
 		}
 	}
 

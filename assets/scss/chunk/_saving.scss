@@ -8,14 +8,24 @@
 		flex-wrap: wrap;
 		align-items: end;
 		justify-content: space-between;
+		gap: 16px;
+
+		@media (max-width: 480px) {
+			gap: 30px;
+		}
 	}
 
 	&__left {
-		margin-right: 16px;
+		& img {
+			height: 450px;
+		}
 	}
 
 	&__right {
 		max-width: 363px;
+		@media (max-width: 480px) {
+			max-width: fit-content;
+		}
 	}
 
 	&__subtitle {
@@ -25,5 +35,9 @@
 		font-weight: 500;
 		line-height: 20px;
 		text-transform: uppercase;
+
+		@media (max-width: 480px) {
+			margin-bottom: 20px;
+		}
 	}
 }

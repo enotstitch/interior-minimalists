@@ -1,7 +1,9 @@
 .spollers {
+	border-bottom: 1px solid var(--light-gray-color);
+
 	&__item {
 		border-top: 1px solid var(--light-gray-color);
-		padding: 30px 0;
+		padding: 20px 0;
 		background-color: transparent;
 
 		&:last-child {
@@ -21,6 +23,7 @@
 	}
 
 	&__text {
+		padding-bottom: 10px;
 		line-height: 130%;
 		line-height: 20px;
 		color: var(--dark-color);
@@ -34,11 +37,12 @@
 	&.init .spollers__title::after {
 		content: '';
 		position: absolute;
-		right: 10px;
-		top: 20px;
-		width: 15px;
-		height: 2px;
+		right: 0;
+		top: 50%;
+		width: 11px;
+		height: 1px;
 		background-color: var(--dark-color);
+		transform: translateY(-50%);
 		transition: transform 0.3s ease 0s;
 	}
 

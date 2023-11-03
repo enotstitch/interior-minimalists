@@ -32,6 +32,12 @@
 		align-items: center;
 	}
 
+	&__link {
+		@media (max-width: 480px) {
+			width: 100%;
+		}
+	}
+
 	&__subtitle {
 		margin: 0;
 		margin-bottom: 12px;

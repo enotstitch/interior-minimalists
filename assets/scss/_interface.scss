@@ -56,6 +56,15 @@
 			opacity: 0.5;
 		}
 	}
+
+	&--mobile {
+		display: none;
+		min-width: 100%;
+
+		@media (max-width: 768px) {
+			display: block;
+		}
+	}
 }
 
 .link {
@@ -92,6 +101,10 @@
 
 	&__img {
 		margin-bottom: 20px;
+
+		@media (max-width: 576px) {
+			display: none;
+		}
 	}
 }
 

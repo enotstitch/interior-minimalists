@@ -55,6 +55,10 @@
 		&:hover {
 			opacity: 0.5;
 		}
+
+		@media (min-width: 1250px) {
+			font-size: 24px;
+		}
 	}
 
 	&--mobile {
@@ -94,9 +98,21 @@
 .bid {
 	max-width: 363px;
 
+	&__title {
+		@include adaptive-font(16, 14);
+		margin: 0;
+		margin-bottom: 30px;
+		font-weight: 500;
+		line-height: 125%;
+		text-transform: uppercase;
+	}
+
 	&__text {
 		margin-bottom: 16px;
-		max-width: 240px;
+
+		&--margin {
+			margin-bottom: 50px;
+		}
 
 		@media (max-width: 576px) {
 			max-width: 100%;

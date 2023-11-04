@@ -144,11 +144,24 @@
 		}
 	}
 
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 1px solid var(--light-gray-color);
+		width: 100%;
+		max-width: 830px;
+	}
+
 	&__text {
 		border-top: 1px solid var(--light-gray-color);
 		padding-top: 20px;
 		padding-bottom: 40px;
 		max-width: 830px;
+
+		&--width {
+			max-width: 520px;
+		}
 
 		&--border {
 			border-bottom: 1px solid var(--light-gray-color);

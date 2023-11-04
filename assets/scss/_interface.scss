@@ -95,6 +95,35 @@
 	}
 }
 
+.more {
+	position: relative;
+	max-width: fit-content;
+	text-transform: uppercase;
+	transition: opacity 0.25s;
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: -30px;
+		top: 50%;
+		width: 13px;
+		height: 13px;
+		background-image: url('@img/icons/sprite.svg#arrow');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		transform: translateY(-50%);
+	}
+
+	&__text {
+		border-bottom: 1px solid var(--dark-color);
+	}
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
 .bid {
 	max-width: 363px;
 

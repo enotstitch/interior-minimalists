@@ -17,4 +17,4 @@ node_modules
 .vscode/
 build/
 package-lock.json
-# gulp/config/ftp.js
+gulp/config/ftp.js

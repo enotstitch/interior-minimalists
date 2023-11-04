@@ -1,4 +1,9 @@
 .useful {
+	&__title {
+		margin-left: auto;
+		max-width: 830px;
+	}
+
 	&__table {
 		.text {
 			border: none;

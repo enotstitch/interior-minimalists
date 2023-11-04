@@ -6,11 +6,17 @@
 	}
 
 	&__title {
-		max-width: 720px;
+		margin-left: auto;
+		max-width: 870px;
 	}
 
 	&__text {
+		margin-bottom: 30px;
 		max-width: 485px;
+
+		&:last-child {
+			margin: 0;
+		}
 	}
 
 	&__img {

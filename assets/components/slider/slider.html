@@ -1,26 +1,42 @@
 <div class="slider-wrap">
 	<div class="swiper">
 		<div class="swiper-wrapper">
+
 			<div class="swiper-slide">
-				<picture>
-					<source class="lazyload swiper-slide__item" type="image/webp" data-srcset="img/sliders/slide-item-1.webp">
-					<img class="lazyload swiper-slide__item" alt="Слайд #1" data-src="img/sliders/slide-item-1.jpg">
-				</picture>
+				<div class="minimalism-projects__wrap">
+					<div class="minimalism-projects__images">
+						<picture>
+							<source type="image/webp" data-srcset="@img/minimalism-projects/minimalism-projects-img-1.webp">
+							<img class="minimalism-projects__image lazyload" alt="Фото интерьера"
+								data-src="@img/minimalism-projects/minimalism-projects-img-1.jpg">
+						</picture>
+						<div class="minimalism-projects__inner">
+							<span class="minimalism-projects__text">
+								ул. Кирова 32
+							</span>
+							<picture>
+								<source type="image/webp" data-srcset="@img/minimalism-projects/minimalism-projects-img-2.webp">
+								<img class="minimalism-projects__image lazyload" alt="Фото интерьера"
+									data-src="@img/minimalism-projects/minimalism-projects-img-2.jpg">
+							</picture>
+						</div>
+					</div>
+					<div class="minimalism-projects__images">
+						<picture>
+							<source type="image/webp" data-srcset="@img/minimalism-projects/minimalism-projects-img-3.webp">
+							<img class="minimalism-projects__image lazyload" alt="Фото интерьера"
+								data-src="@img/minimalism-projects/minimalism-projects-img-3.jpg">
+						</picture>
+						<picture>
+							<source type="image/webp" data-srcset="@img/minimalism-projects/minimalism-projects-img-4.webp">
+							<img class="minimalism-projects__image lazyload" alt="Фото интерьера"
+								data-src="@img/minimalism-projects/minimalism-projects-img-4.jpg">
+						</picture>
+					</div>
+				</div>
 			</div>
-			<div class="swiper-slide">
-				<picture>
-					<source class="lazyload swiper-slide__item" type="image/webp" data-srcset="img/sliders/slide-item-2.webp">
-					<img class="lazyload swiper-slide__item" alt="Слайд #2" data-src="img/sliders/slide-item-2.jpg">
-				</picture>
-			</div>
-			<div class="swiper-slide">
-				<picture>
-					<source class="lazyload swiper-slide__item" type="image/webp" data-srcset="img/sliders/slide-item-3.webp">
-					<img class="lazyload swiper-slide__item" alt="Слайд #3" data-src="img/sliders/slide-item-3.jpg">
-				</picture>
-			</div>
+
 		</div>
-		<div class="swiper-btn swiper-btn--prev"></div>
-		<div class="swiper-btn swiper-btn--next"></div>
+		<div class="swiper__pagination"></div>
 	</div>
 </div>

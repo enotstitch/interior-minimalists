@@ -1,0 +1,20 @@
+.estimate {
+	&__title {
+		margin-left: auto;
+		max-width: 830px;
+	}
+
+	&__wrap {
+		margin-left: auto;
+		max-width: 830px;
+	}
+
+	&__text {
+		margin-bottom: 30px;
+		max-width: 506px;
+
+		&:last-child {
+			margin-bottom: 50px;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.benefit {
+	&__title {
+		margin-left: auto;
+		max-width: 830px;
+	}
+
+	&__table {
+		margin-bottom: 50px;
+
+		@media (max-width: 480px) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__consultation {
+		margin-left: auto;
+		padding-right: 40px;
+	}
+
+	&__link {
+		max-width: 360px;
+	}
+}

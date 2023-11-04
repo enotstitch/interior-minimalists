@@ -97,23 +97,14 @@
 
 .more {
 	position: relative;
+	padding-right: 30px;
 	max-width: fit-content;
 	text-transform: uppercase;
+	background-image: url('@img/icons/sprite.svg#arrow');
+	background-position: right 0 top 50%;
+	background-size: 13px;
+	background-repeat: no-repeat;
 	transition: opacity 0.25s;
-
-	&::after {
-		content: '';
-		position: absolute;
-		right: -30px;
-		top: 50%;
-		width: 13px;
-		height: 13px;
-		background-image: url('@img/icons/sprite.svg#arrow');
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		transform: translateY(-50%);
-	}
 
 	&__text {
 		border-bottom: 1px solid var(--dark-color);
@@ -190,22 +181,21 @@
 		align-items: center;
 		justify-content: space-between;
 		border-top: 1px solid var(--light-gray-color);
+		padding-top: 20px;
+		padding-bottom: 40px;
 		width: 100%;
 		max-width: 830px;
+
+		&--border {
+			border-bottom: 1px solid var(--light-gray-color);
+		}
 	}
 
 	&__text {
-		border-top: 1px solid var(--light-gray-color);
-		padding-top: 20px;
-		padding-bottom: 40px;
 		max-width: 830px;
 
 		&--width {
 			max-width: 520px;
-		}
-
-		&--border {
-			border-bottom: 1px solid var(--light-gray-color);
 		}
 
 		@media (max-width: 1050px) {

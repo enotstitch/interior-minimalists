@@ -19,10 +19,17 @@
 		& img {
 			height: 450px;
 		}
+
+		@media (max-width: 1050px) {
+			margin: 0 auto;
+		}
 	}
 
 	&__right {
 		max-width: 363px;
+		@media (max-width: 1050px) {
+			max-width: 100%;
+		}
 		@media (max-width: 480px) {
 			max-width: fit-content;
 		}

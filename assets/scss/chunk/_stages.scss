@@ -1,13 +1,13 @@
 /* stylelint-disable no-descending-specificity */
 
-.steps {
+.stages {
 	&__rows {
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
 		max-width: fit-content;
 
-		@media (max-width: 768px) {
+		@media (max-width: 992px) {
 			flex-direction: row;
 			overflow-x: scroll;
 			padding-bottom: 20px;
@@ -21,7 +21,7 @@
 		&--left {
 			border-bottom: 1px solid var(--light-gray-color);
 
-			.steps-block {
+			.stages-block {
 				border-right: 1px solid var(--light-gray-color);
 
 				&:first-child {
@@ -31,7 +31,7 @@
 						padding-left: 16px;
 					}
 
-					@media (max-width: 768px) {
+					@media (max-width: 992px) {
 						padding-left: 0;
 					}
 				}
@@ -39,7 +39,7 @@
 				&:last-child {
 					border: none;
 
-					@media (max-width: 768px) {
+					@media (max-width: 992px) {
 						border-right: 1px solid var(--light-gray-color);
 					}
 				}
@@ -48,10 +48,10 @@
 
 		&--right {
 			margin-top: -1px;
-			margin-left: 473px;
+			margin-left: 415px;
 			border-top: 1px solid var(--light-gray-color);
 
-			.steps-block {
+			.stages-block {
 				border-left: 1px solid var(--light-gray-color);
 
 				@media (max-width: 1220px) {
@@ -69,7 +69,7 @@
 				margin-left: -1px;
 			}
 
-			@media (max-width: 768px) {
+			@media (max-width: 992px) {
 				margin: 0;
 				border-top: none;
 				border-bottom: 1px solid var(--light-gray-color);
@@ -78,12 +78,12 @@
 	}
 }
 
-.steps-block {
+.stages-block {
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
 	padding: 30px 16px 16px;
-	width: 237px;
+	width: 416px;
 	min-height: 220px;
 
 	&__subtitle {
@@ -103,5 +103,9 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		color: var(--gray-color);
+	}
+
+	@media (max-width: 768px) {
+		width: 262px;
 	}
 }

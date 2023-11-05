@@ -2,7 +2,7 @@ import quizData from './quizData';
 
 const quizTemplate = (data = [], dataLength, options) => {
 	const { number, title } = data;
-	const { nextBtnText } = options;
+	const { nextBtnText, sendBtnText } = options;
 	const answers = data.answers.map((item) => {
 		if (item.type === 'radio') {
 			return `
@@ -46,21 +46,43 @@ const quizTemplate = (data = [], dataLength, options) => {
 					<span>${item.answer_title}</span>
 			</label>
 			`;
-		} else if (item.type === 'policy') {
-			return `
-			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="checkbox" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
-					<span>${item.answer_title}</span>
-					<p class="quiz-question__policy">
-						Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link">Политикой конфиденциальности</a>
-					</p>
-			</label>
-			`;
 		}
 	});
 
-	return `
+	if (data.answer_alias === 'contacts') {
+		return `
+		<div class="quiz__content">
+			<div class="quiz__header quiz-header quiz-header--margin">
+				<h3 class="quiz-header__title">${title}</h3>
+				<div class="quiz-header__num">0${number}<span class="quiz-header__num--gray">/0${dataLength}</span></div>
+			</div>
+			<p class="quiz__text">Мы свяжемся с вами в рабочее
+			<br>
+			время: пн.–пт. с 9 до 18</p>
+			<div class="quiz-question">
+				<div class="quiz-question__answers quiz-question__answers--margin">
+					${answers.join('')}
+					<button type="button" class="quiz-question__send link btn-reset" data-send>
+						<span class="link__text">${sendBtnText}</span>
+						<svg class="link__svg">
+							<use href="img/icons/sprite.svg#arrow"></use>
+						</svg>
+					</button>
+					<label class="quiz-question__label">
+						<input class="quiz-question__answer" type="checkbox" data-valid="false" name="contacts">
+						<p class="quiz-question__policy">
+							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link">Политикой
+								конфиденциальности</a>
+						</p>
+					</label>
+				</div>
+			</div>
+		</div>
 
+
+		`;
+	} else {
+		return `
 		<div class="quiz__content">
 			<div class="quiz__header quiz-header">
 				<h3 class="quiz-header__title">${title}</h3>
@@ -79,6 +101,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 		</div>
 
 	`;
+	}
 };
 
 class Quiz {
@@ -136,26 +159,12 @@ class Quiz {
 				this.counter++;
 				this.$el.innerHTML = quizTemplate(quizData[this.counter], this.dataLength, this.options);
 
-				if (this.counter !== 0) {
+				if (this.counter !== 0 && this.counter + 1 !== this.dataLength) {
 					const nextBtn = this.$el.querySelector('.quiz-question__btn');
 					nextBtn.outerHTML = `
           <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
           <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
           `;
-				}
-
-				if (this.counter + 1 == this.dataLength) {
-					this.$el.insertAdjacentHTML(
-						'beforeend',
-						`<button type="button" class="quiz-question__send link btn-reset" data-send>
-						<span class="link__text">${this.options.sendBtnText}</span>
-							<svg class="link__svg">
-									<use href="img/icons/sprite.svg#arrow"></use>
-							</svg>
-						</button>`,
-					);
-					this.$el.querySelector('[data-next-btn]').remove();
-					this.$el.querySelector('[data-prev-btn]').remove();
 				}
 			}
 		}
@@ -216,6 +225,8 @@ class Quiz {
 				}
 			}
 
+			console.log(formData);
+
 			const response = fetch('mail.php', {
 				method: 'POST',
 				body: formData,
@@ -250,7 +261,7 @@ class Quiz {
 						(field.type != 'checkbox' && field.type != 'radio' && field.value) ||
 						field.checked
 					) {
-						valueString += field.value + ',';
+						valueString += field.value + ', ';
 
 						s[field.name] = valueString;
 					}

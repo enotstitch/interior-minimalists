@@ -229,6 +229,16 @@
 		&--text-align {
 			align-items: start;
 			text-align: start;
+
+			@media (max-width: 1050px) {
+				align-items: center;
+				text-align: center;
+			}
+
+			@media (max-width: 480px) {
+				align-items: start;
+				text-align: start;
+			}
 		}
 	}
 

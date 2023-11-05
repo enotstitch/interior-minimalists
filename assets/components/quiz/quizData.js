@@ -69,7 +69,7 @@ const quizData = [
 	},
 	{
 		number: 5,
-		title: 'Когда вы планируете начать реализацию вашего проекта?',
+		title: 'Оставьте ваши контакты',
 		answer_alias: 'contacts',
 		answers: [
 			{
@@ -79,10 +79,6 @@ const quizData = [
 			{
 				answer_title: '',
 				type: 'phone',
-			},
-			{
-				answer_title: '',
-				type: 'policy',
 			},
 		],
 	},

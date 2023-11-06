@@ -6,18 +6,20 @@ const quizTemplate = (data = [], dataLength, options) => {
 	const answers = data.answers.map((item) => {
 		if (item.type === 'radio') {
 			return `
-			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="radio" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
+				<label class="quiz-question__label">
+					<input class="quiz-question__radio-real" name="${data.answer_alias}" value="${item.answer_title}" type="radio" data-valid="false" />
+					<span class="quiz-question__radio-fake"></span>
 					<span>${item.answer_title}</span>
-			</label>
-		`;
+				</label>
+			`;
 		} else if (item.type === 'text') {
 			return `
-			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="radio" data-valid="false" name="${data.answer_alias}">
+				<label class="quiz-question__label">
+					<input class="quiz-question__radio-real" name="${data.answer_alias}" value="${item.answer_title}" type="radio" data-valid="false" />
+					<span class="quiz-question__radio-fake"></span>
 					<span>${item.answer_title}</span>
 					<input type="${item.type}" data-valid="false" class="quiz-question__answer" name="${data.answer_alias}">
-			</label>
+				</label>
 			`;
 		} else if (item.type === 'square') {
 			return `
@@ -28,8 +30,9 @@ const quizTemplate = (data = [], dataLength, options) => {
 		} else if (item.type === 'checkbox') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="checkbox" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
-					<span>${item.answer_title}</span>
+				<input class="quiz-question__checkbox-real" type="checkbox" name="${data.answer_alias}" value="${item.answer_title}" data-valid="false">
+				<div class="quiz-question__checkbox-fake"></div>
+				<span>${item.answer_title}</span>
 			</label>
 			`;
 		} else if (item.type === 'name') {
@@ -69,7 +72,9 @@ const quizTemplate = (data = [], dataLength, options) => {
 						</svg>
 					</button>
 					<label class="quiz-question__label">
-						<input class="quiz-question__answer" type="checkbox" data-valid="false" name="contacts">
+							<input class="quiz-question__checkbox-real" type="checkbox" name="contacts""
+		data-valid="false">
+	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link">Политикой
 								конфиденциальности</a>

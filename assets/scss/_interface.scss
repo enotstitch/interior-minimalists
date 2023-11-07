@@ -10,6 +10,30 @@
 	}
 }
 
+.main-title {
+	@include adaptive-font(57, 20);
+	margin: 0;
+	margin-bottom: 40px;
+	font-weight: 500;
+	line-height: 115%;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--dark-color);
+
+	& span {
+		display: block;
+		text-align: start;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 57px;
+	}
+
+	@media (max-width: 768px) {
+		margin-bottom: 20px;
+	}
+}
+
 .title {
 	@include adaptive-font(40, 20);
 	margin: 0;

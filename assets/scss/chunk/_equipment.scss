@@ -9,22 +9,6 @@
 	}
 
 	&__title {
-		@include adaptive-font(57, 20);
-		margin: 0;
-		font-weight: 500;
-		line-height: 115%;
-		text-align: center;
-		text-transform: uppercase;
-
-		span {
-			display: block;
-			text-align: start;
-		}
-
-		@media (min-width: 1250px) {
-			font-size: 56px;
-		}
-
 		@media (max-width: 1050px) {
 			margin-bottom: 20px;
 		}

@@ -1,17 +1,4 @@
 .articles {
-	&__title {
-		text-align: center;
-
-		& span {
-			display: block;
-			text-align: left;
-		}
-
-		@media (max-width: 768px) {
-			text-align: start;
-		}
-	}
-
 	&__list {
 		margin-bottom: 50px;
 		margin-left: auto;

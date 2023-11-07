@@ -197,7 +197,22 @@ class Quiz {
 	valid() {
 		let isValid = false;
 		let elements = this.$el.querySelectorAll('input');
+		const currentQuestion = quizData[this.counter];
 		elements.forEach((el) => {
+			if (currentQuestion.answer_alias === 'type') {
+				if (el.type === 'text') {
+					const radio = el
+						.closest('.quiz-question__label')
+						.querySelector('.quiz-question__radio-real');
+					if (radio.checked && el.value) {
+						isValid = true;
+						return isValid;
+					} else if ((radio.checked && !el.value) || (!radio.checked && el.value)) {
+						isValid = false;
+						return isValid;
+					}
+				}
+			}
 			switch (el.type) {
 				case 'text':
 					el.value

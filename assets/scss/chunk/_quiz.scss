@@ -1,21 +1,4 @@
 .quiz {
-	&__title {
-		text-align: center;
-
-		& span {
-			display: block;
-			text-align: start;
-
-			@media (max-width: 768px) {
-				display: inline-block;
-			}
-		}
-
-		@media (max-width: 768px) {
-			text-align: start;
-		}
-	}
-
 	&__form {
 		margin: 0 auto;
 		border: 1px solid var(--light-gray-color);

@@ -1,21 +1,4 @@
 .ideas {
-	&__title {
-		text-align: center;
-
-		& span {
-			display: block;
-			text-align: start;
-
-			@media (max-width: 800px) {
-				display: inline;
-			}
-		}
-
-		@media (max-width: 800px) {
-			text-align: start;
-		}
-	}
-
 	&__wrap {
 		display: flex;
 		flex-direction: column;

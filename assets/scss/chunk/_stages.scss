@@ -1,6 +1,15 @@
 /* stylelint-disable no-descending-specificity */
 
 .stages {
+	&__title {
+		max-width: 685px;
+		text-align: end;
+
+		@media (max-width: 1050px) {
+			text-align: start;
+		}
+	}
+
 	&__rows {
 		display: flex;
 		flex-direction: column;

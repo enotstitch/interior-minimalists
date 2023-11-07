@@ -4,6 +4,10 @@
 	&-hero {
 		padding-top: 40px;
 	}
+
+	@media (max-width: 768px) {
+		padding: 30px 0;
+	}
 }
 
 .title {

@@ -2,6 +2,10 @@
 	&__texts {
 		position: relative;
 		margin-bottom: 40px;
+
+		@media (max-width: 1050px) {
+			margin-bottom: 15px;
+		}
 	}
 
 	&__title {
@@ -20,6 +24,10 @@
 		@media (min-width: 1250px) {
 			font-size: 56px;
 		}
+
+		@media (max-width: 1050px) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__text {
@@ -27,6 +35,10 @@
 		right: 0;
 		bottom: 5px;
 		max-width: 320px;
+
+		@media (max-width: 1050px) {
+			position: relative;
+		}
 	}
 
 	&__wrap {
@@ -34,9 +46,24 @@
 		align-items: end;
 		justify-content: space-between;
 		gap: 16px;
+
+		@media (max-width: 1050px) {
+			flex-direction: column-reverse;
+			align-items: center;
+		}
 	}
 
 	&__socials {
 		margin-bottom: 50px;
+
+		@media (max-width: 1050px) {
+			display: none;
+		}
+	}
+
+	&__links {
+		@media (max-width: 480px) {
+			width: 100%;
+		}
 	}
 }

@@ -13,6 +13,7 @@
 @import './libs/swiper-bundle.min';
 
 // * Main styles
+@import 'chunk/animate';
 @import '../components/header/header';
 @import 'chunk/hero';
 @import '../components/slider/slider';

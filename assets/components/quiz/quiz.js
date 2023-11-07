@@ -199,15 +199,28 @@ class Quiz {
 		let elements = this.$el.querySelectorAll('input');
 		elements.forEach((el) => {
 			switch (el.type) {
-				case 'radio':
-					el.checked ? (isValid = true) : el.classList.add('error');
 				case 'text':
-					el.value ? (isValid = true) : el.classList.add('error');
+					el.value
+						? (isValid = true)
+						: el.closest('.quiz-question__label').classList.add('quiz-question__label--error');
+				case 'tel':
+					el.value
+						? (isValid = true)
+						: el.closest('.quiz-question__label').classList.add('quiz-question__label--error');
 				case 'checkbox':
-					el.checked ? (isValid = true) : el.classList.add('error');
+					el.checked
+						? (isValid = true)
+						: el.closest('.quiz-question__label').classList.add('quiz-question__label--error');
+				case 'radio':
+					el.checked
+						? (isValid = true)
+						: el.closest('.quiz-question__label').classList.add('quiz-question__label--error');
 			}
+
+			setTimeout(() => {
+				el.closest('.quiz-question__label').classList.remove('quiz-question__label--error');
+			}, 700);
 		});
-		debugger;
 
 		return isValid;
 	}
@@ -225,7 +238,7 @@ class Quiz {
 			console.log('send!');
 
 			let elements = this.$el.querySelectorAll('input');
-			elements.forEach((el) => el.classList.remove('error'));
+			elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
 			const formData = new FormData();
 

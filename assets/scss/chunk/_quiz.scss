@@ -23,6 +23,7 @@
 	justify-content: space-between;
 	margin-bottom: 42px;
 	gap: 15px;
+	animation: fade-in 1.25s;
 
 	&__title {
 		margin: 0;
@@ -48,6 +49,8 @@
 }
 
 .quiz-question {
+	animation: fade-in 1.25s;
+
 	&__answers {
 		display: flex;
 		flex-direction: column;
@@ -65,6 +68,10 @@
 		gap: 10px;
 		width: 100%;
 		cursor: pointer;
+
+		&--error {
+			animation: head-shake 0.7s;
+		}
 	}
 
 	&__answer {
@@ -185,6 +192,10 @@
 		padding: 28px 10px;
 		width: 100%;
 		text-transform: uppercase;
+
+		span {
+			z-index: -1;
+		}
 	}
 
 	& &__label input:checked ~ &__checkbox-fake {
@@ -197,5 +208,6 @@ input {
 	border-bottom: 1px solid var(--light-gray-color);
 	padding: 5px 0;
 	width: 100%;
+	transition: border-color 0.2s;
 	cursor: text;
 }

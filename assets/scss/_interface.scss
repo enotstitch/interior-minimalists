@@ -316,19 +316,14 @@
 		margin: 0;
 		font-size: 12px;
 		text-align: center;
-		color: var(--light-gray-color);
+		color: var(--dark-color);
 
 		&--underline {
 			text-decoration-line: underline;
 		}
 
-		&--color {
-			color: var(--dark-color);
-		}
-
 		@media (max-width: 480px) {
 			text-align: start;
-			color: var(--dark-color);
 		}
 	}
 

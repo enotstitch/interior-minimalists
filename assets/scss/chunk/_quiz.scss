@@ -80,11 +80,76 @@
 		display: flex;
 		align-items: center;
 		gap: 10px;
+		width: 100%;
+		cursor: pointer;
 	}
 
 	&__answer {
 		line-height: 125%;
 		color: var(--dark-color);
+	}
+
+	&__radio {
+		&-real {
+			position: absolute;
+			z-index: -1;
+			width: 0;
+			height: 0;
+			opacity: 0;
+		}
+
+		&-fake {
+			position: relative;
+			display: inline-block;
+			flex-shrink: 0;
+			border: 1px solid var(--light-gray-color);
+			border-radius: 50%;
+			width: 16px;
+			height: 16px;
+			background-color: var(--light-color);
+			cursor: pointer;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				border-radius: 50%;
+				width: 8px;
+				height: 8px;
+				background-color: var(--gray-color);
+				transform: translate(-50%, -50%) scale(0);
+				transition: 0.2s ease-in;
+			}
+
+			.quiz-question__radio-real:checked + &::before {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+	}
+
+	&__checkbox {
+		&-real {
+			position: absolute;
+			z-index: -1;
+			width: 0;
+			height: 0;
+			opacity: 0;
+		}
+
+		&-fake {
+			position: relative;
+			flex-shrink: 0;
+			border: 2px solid var(--gray-color);
+			width: 16px;
+			height: 16px;
+			background-image: url('@img/icons/sprite.svg#check-mark');
+			background-position: center;
+			background-size: 0;
+			background-repeat: no-repeat;
+			transition: background-size 0.2s;
+			cursor: pointer;
+		}
 	}
 
 	&__btns {
@@ -138,9 +203,13 @@
 		width: 100%;
 		text-transform: uppercase;
 	}
+
+	& &__label input:checked ~ &__checkbox-fake {
+		background-size: 11px;
+	}
 }
 
-input[type='text'] {
+input {
 	all: unset;
 	border-bottom: 1px solid var(--light-gray-color);
 	padding: 5px 0;

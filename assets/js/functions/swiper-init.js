@@ -5,7 +5,7 @@ import Swiper from 'swiper';
 const swiper = new Swiper('.swiper', {
 	modules: [Pagination],
 	speed: 400,
-	loop: true,
+	loop: false,
 
 	pagination: {
 		enabled: true,

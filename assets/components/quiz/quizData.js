@@ -78,7 +78,7 @@ const quizData = [
 			},
 			{
 				answer_title: '',
-				type: 'phone',
+				type: 'tel',
 			},
 		],
 	},

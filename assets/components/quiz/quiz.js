@@ -1,3 +1,4 @@
+import formValidate from '../../js/functions/formValidate';
 import quizData from './quizData';
 
 const quizTemplate = (data = [], dataLength, options) => {
@@ -6,30 +7,33 @@ const quizTemplate = (data = [], dataLength, options) => {
 	const answers = data.answers.map((item) => {
 		if (item.type === 'radio') {
 			return `
-			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="radio" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
+				<label class="quiz-question__label">
+					<input class="quiz-question__radio-real" name="${data.answer_alias}" value="${item.answer_title}" type="radio" data-valid="false" />
+					<span class="quiz-question__radio-fake"></span>
 					<span>${item.answer_title}</span>
-			</label>
-		`;
+				</label>
+			`;
 		} else if (item.type === 'text') {
 			return `
-			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="radio" data-valid="false" name="${data.answer_alias}">
+				<label class="quiz-question__label">
+					<input class="quiz-question__radio-real" name="${data.answer_alias}" value="${item.answer_title}" type="radio" data-valid="false" />
+					<span class="quiz-question__radio-fake"></span>
 					<span>${item.answer_title}</span>
 					<input type="${item.type}" data-valid="false" class="quiz-question__answer" name="${data.answer_alias}">
-			</label>
+				</label>
 			`;
 		} else if (item.type === 'square') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="text" data-valid="false" placeholder="М²" name="${data.answer_alias}">
+					<input class="quiz-question__answer" type="text" data-valid="false" pattern="\d [0-9]" placeholder="М²" name="${data.answer_alias}">
 			</label>
 			`;
 		} else if (item.type === 'checkbox') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="checkbox" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
-					<span>${item.answer_title}</span>
+				<input class="quiz-question__checkbox-real" type="checkbox" name="${data.answer_alias}" value="${item.answer_title}" data-valid="false">
+				<div class="quiz-question__checkbox-fake"></div>
+				<span>${item.answer_title}</span>
 			</label>
 			`;
 		} else if (item.type === 'name') {
@@ -39,10 +43,10 @@ const quizTemplate = (data = [], dataLength, options) => {
 					<span>${item.answer_title}</span>
 			</label>
 			`;
-		} else if (item.type === 'phone') {
+		} else if (item.type === 'tel') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="text" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
+					<input class="quiz-question__answer" type="tel" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
 					<span>${item.answer_title}</span>
 			</label>
 			`;
@@ -69,7 +73,9 @@ const quizTemplate = (data = [], dataLength, options) => {
 						</svg>
 					</button>
 					<label class="quiz-question__label">
-						<input class="quiz-question__answer" type="checkbox" data-valid="false" name="contacts">
+							<input class="quiz-question__checkbox-real" type="checkbox" name="contacts""
+		data-valid="false">
+	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link">Политикой
 								конфиденциальности</a>
@@ -152,7 +158,6 @@ class Quiz {
 	}
 
 	nextQuestion() {
-		console.log(this.resultArray);
 		if (this.valid()) {
 			console.log('next question!');
 			if (this.counter + 1 < this.dataLength) {
@@ -162,9 +167,13 @@ class Quiz {
 				if (this.counter !== 0 && this.counter + 1 !== this.dataLength) {
 					const nextBtn = this.$el.querySelector('.quiz-question__btn');
 					nextBtn.outerHTML = `
-          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
-          <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
-          `;
+		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
+		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
+		      `;
+				}
+
+				if (this.counter + 1 === this.dataLength) {
+					formValidate();
 				}
 			}
 		}
@@ -190,14 +199,15 @@ class Quiz {
 		let elements = this.$el.querySelectorAll('input');
 		elements.forEach((el) => {
 			switch (el.type) {
+				case 'radio':
+					el.checked ? (isValid = true) : el.classList.add('error');
 				case 'text':
 					el.value ? (isValid = true) : el.classList.add('error');
 				case 'checkbox':
 					el.checked ? (isValid = true) : el.classList.add('error');
-				case 'radio':
-					el.checked ? (isValid = true) : el.classList.add('error');
 			}
 		});
+		debugger;
 
 		return isValid;
 	}

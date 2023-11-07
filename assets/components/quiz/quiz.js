@@ -1,3 +1,4 @@
+import formValidate from '../../js/functions/formValidate';
 import quizData from './quizData';
 
 const quizTemplate = (data = [], dataLength, options) => {
@@ -24,7 +25,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 		} else if (item.type === 'square') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="text" data-valid="false" placeholder="М²" name="${data.answer_alias}">
+					<input class="quiz-question__answer" type="text" data-valid="false" pattern="\d [0-9]" placeholder="М²" name="${data.answer_alias}">
 			</label>
 			`;
 		} else if (item.type === 'checkbox') {
@@ -42,10 +43,10 @@ const quizTemplate = (data = [], dataLength, options) => {
 					<span>${item.answer_title}</span>
 			</label>
 			`;
-		} else if (item.type === 'phone') {
+		} else if (item.type === 'tel') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="text" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
+					<input class="quiz-question__answer" type="tel" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
 					<span>${item.answer_title}</span>
 			</label>
 			`;
@@ -157,7 +158,6 @@ class Quiz {
 	}
 
 	nextQuestion() {
-		console.log(this.resultArray);
 		if (this.valid()) {
 			console.log('next question!');
 			if (this.counter + 1 < this.dataLength) {
@@ -167,9 +167,13 @@ class Quiz {
 				if (this.counter !== 0 && this.counter + 1 !== this.dataLength) {
 					const nextBtn = this.$el.querySelector('.quiz-question__btn');
 					nextBtn.outerHTML = `
-          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
-          <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
-          `;
+		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
+		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
+		      `;
+				}
+
+				if (this.counter + 1 === this.dataLength) {
+					formValidate();
 				}
 			}
 		}
@@ -195,14 +199,15 @@ class Quiz {
 		let elements = this.$el.querySelectorAll('input');
 		elements.forEach((el) => {
 			switch (el.type) {
+				case 'radio':
+					el.checked ? (isValid = true) : el.classList.add('error');
 				case 'text':
 					el.value ? (isValid = true) : el.classList.add('error');
 				case 'checkbox':
 					el.checked ? (isValid = true) : el.classList.add('error');
-				case 'radio':
-					el.checked ? (isValid = true) : el.classList.add('error');
 			}
 		});
+		debugger;
 
 		return isValid;
 	}

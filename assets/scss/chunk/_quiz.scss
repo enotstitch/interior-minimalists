@@ -198,7 +198,7 @@
 		}
 	}
 
-	& &__label input:checked ~ &__checkbox-fake {
+	&__label input:checked ~ &__checkbox-fake {
 		background-size: 11px;
 	}
 }

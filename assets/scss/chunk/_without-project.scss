@@ -1,0 +1,9 @@
+.without-project {
+	&__img {
+		@media (max-width: 768px) {
+			img {
+				height: 400px;
+			}
+		}
+	}
+}

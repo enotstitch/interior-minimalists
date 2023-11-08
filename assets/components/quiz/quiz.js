@@ -124,7 +124,6 @@ class Quiz {
 	}
 
 	init() {
-		console.log('init!');
 		this.$el.innerHTML = quizTemplate(quizData[this.counter], this.dataLength, this.options);
 	}
 
@@ -159,7 +158,6 @@ class Quiz {
 
 	nextQuestion() {
 		if (this.valid()) {
-			console.log('next question!');
 			if (this.counter + 1 < this.dataLength) {
 				this.counter++;
 				this.$el.innerHTML = quizTemplate(quizData[this.counter], this.dataLength, this.options);
@@ -180,8 +178,6 @@ class Quiz {
 	}
 
 	prevQuestion() {
-		console.log(this.resultArray);
-
 		this.counter--;
 		this.$el.innerHTML = quizTemplate(quizData[this.counter], this.dataLength, this.options);
 
@@ -250,8 +246,6 @@ class Quiz {
 
 	send() {
 		if (this.valid()) {
-			console.log('send!');
-
 			let elements = this.$el.querySelectorAll('input');
 			elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
@@ -262,8 +256,6 @@ class Quiz {
 					formData.append(obj, item[obj].substring(0, item[obj].length - 1));
 				}
 			}
-
-			console.log(formData);
 
 			const response = fetch('mail.php', {
 				method: 'POST',
@@ -310,8 +302,10 @@ class Quiz {
 	}
 }
 
-window.quiz = new Quiz('.quiz__form', quizData, {
-	sendBtnText: 'Оставить заявку',
-	nextBtnText: 'Далее',
-	prevBtnText: 'Назад',
-});
+try {
+	window.quiz = new Quiz('.quiz__form', quizData, {
+		sendBtnText: 'Оставить заявку',
+		nextBtnText: 'Далее',
+		prevBtnText: 'Назад',
+	});
+} catch {}

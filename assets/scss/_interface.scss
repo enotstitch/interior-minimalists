@@ -18,7 +18,6 @@
 	line-height: 115%;
 	text-align: center;
 	text-transform: uppercase;
-	color: var(--dark-color);
 
 	& span {
 		display: block;
@@ -71,11 +70,10 @@
 
 .text {
 	margin: 0;
-	line-height: 125%;
 }
 
 .socials {
-	min-width: 363px;
+	min-width: 365px;
 
 	&__item {
 		border-top: 1px solid var(--light-gray-color);
@@ -144,7 +142,7 @@
 		opacity: 0.5;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
 		padding: 24px;
 		width: 100%;
 	}
@@ -171,22 +169,35 @@
 }
 
 .bid {
-	max-width: 363px;
+	max-width: 365px;
 
 	&__title {
 		@include adaptive-font(16, 14);
 		margin: 0;
 		margin-bottom: 30px;
 		font-weight: 500;
-		line-height: 125%;
 		text-transform: uppercase;
 	}
 
 	&__text {
-		margin-bottom: 16px;
+		margin-bottom: 15px;
 
 		&--margin {
 			margin-bottom: 50px;
+		}
+
+		&--mobile {
+			display: none;
+		}
+
+		@media (max-width: 1050px) {
+			&--desktop {
+				display: none;
+			}
+
+			&--mobile {
+				display: block;
+			}
 		}
 
 		@media (max-width: 576px) {
@@ -196,6 +207,10 @@
 
 	&__img {
 		margin-bottom: 20px;
+
+		@media (max-width: 576px) {
+			display: none;
+		}
 	}
 }
 
@@ -224,9 +239,7 @@
 		padding-bottom: 40px;
 		max-width: 250px;
 		font-weight: 500;
-		line-height: 125%;
 		text-transform: uppercase;
-		color: var(--dark-color);
 
 		@media (max-width: 1050px) {
 			padding-bottom: 0;
@@ -259,6 +272,7 @@
 			border: none;
 			padding-top: 0;
 			padding-bottom: 30px;
+			max-width: 100%;
 		}
 
 		@media (max-width: 480px) {
@@ -348,9 +362,7 @@
 		margin: 0;
 		margin-bottom: 12px;
 		font-weight: 500;
-		line-height: 125%;
 		text-transform: uppercase;
-		color: var(--dark-color);
 
 		@media (max-width: 480px) {
 			text-align: start;
@@ -361,7 +373,6 @@
 		margin: 0;
 		font-size: 12px;
 		text-align: center;
-		color: var(--dark-color);
 
 		&--underline {
 			text-decoration-line: underline;

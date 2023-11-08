@@ -16,17 +16,12 @@
 		position: relative;
 		width: 100%;
 		font-weight: 500;
-		line-height: 20px;
 		text-align: left;
 		text-transform: uppercase;
-		color: var(--dark-color);
 	}
 
 	&__text {
 		padding-bottom: 10px;
-		line-height: 130%;
-		line-height: 20px;
-		color: var(--dark-color);
 	}
 
 	&.init .spollers__title {

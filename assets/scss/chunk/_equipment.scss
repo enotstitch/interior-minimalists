@@ -1,6 +1,5 @@
 .equipment {
 	&__texts {
-		position: relative;
 		margin-bottom: 40px;
 
 		@media (max-width: 1050px) {
@@ -9,19 +8,19 @@
 	}
 
 	&__title {
-		@media (max-width: 1050px) {
-			margin-bottom: 20px;
-		}
+		margin: 0;
+		margin-bottom: 20px;
 	}
 
-	&__text {
-		position: absolute;
-		right: 0;
-		bottom: 5px;
-		max-width: 320px;
+	&__subtitle {
+		@include adaptive-font(16, 14);
+		margin: 0;
+		margin-left: auto;
+		max-width: 415px;
+		font-weight: 300;
 
-		@media (max-width: 1050px) {
-			position: relative;
+		@media (max-width: 768px) {
+			margin: 0;
 		}
 	}
 
@@ -48,6 +47,12 @@
 	&__links {
 		@media (max-width: 480px) {
 			width: 100%;
+		}
+	}
+
+	&__img img {
+		@media (max-width: 480px) {
+			height: 280px;
 		}
 	}
 }

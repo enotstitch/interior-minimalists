@@ -1,0 +1,17 @@
+.needed {
+	margin-left: auto;
+	max-width: 870px;
+
+	&__table {
+		margin-bottom: 50px;
+
+		@media (max-width: 768px) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__text {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}

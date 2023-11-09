@@ -11,21 +11,21 @@
 }
 
 .main-title {
-	@include adaptive-font(57, 20);
+	@include adaptive-font(56, 20);
 	margin: 0;
 	margin-bottom: 40px;
 	font-weight: 500;
 	line-height: 115%;
-	text-align: center;
 	text-transform: uppercase;
 
 	& span {
 		display: block;
-		text-align: start;
+		margin-left: auto;
+		max-width: 870px;
 	}
 
 	@media (min-width: 768px) {
-		font-size: 57px;
+		font-size: 56px;
 	}
 
 	@media (max-width: 768px) {
@@ -41,20 +41,13 @@
 	line-height: 115%;
 	text-transform: uppercase;
 
-	&--text-align {
-		text-align: center;
-
-		& span {
-			display: block;
-			text-align: start;
-
-			@media (max-width: 768px) {
-				display: inline-block;
-			}
-		}
+	& span {
+		display: block;
+		margin-left: auto;
+		max-width: 870px;
 
 		@media (max-width: 768px) {
-			text-align: start;
+			display: inline-block;
 		}
 	}
 
@@ -258,7 +251,7 @@
 		padding-top: 20px;
 		padding-bottom: 40px;
 		width: 100%;
-		max-width: 830px;
+		max-width: 870px;
 		gap: 20px;
 
 		&--column {
@@ -333,7 +326,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 830px;
+	max-width: 870px;
 	gap: 30px;
 
 	&__inner {

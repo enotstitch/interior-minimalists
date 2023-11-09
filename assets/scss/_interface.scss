@@ -130,6 +130,7 @@
 	justify-content: center;
 	border: 1px solid var(--gray-color);
 	padding: 28px 78px;
+	text-transform: uppercase;
 	transition: opacity 0.25s;
 	gap: 20px;
 
@@ -282,11 +283,7 @@
 	}
 
 	&__text {
-		max-width: 830px;
-
-		&--width {
-			max-width: 520px;
-		}
+		max-width: 670px;
 	}
 
 	&__link {

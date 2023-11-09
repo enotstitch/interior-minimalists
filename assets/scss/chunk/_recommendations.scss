@@ -1,19 +1,26 @@
 .recommendations {
 	&__texts {
-		position: relative;
+		margin-bottom: 40px;
+
+		@media (max-width: 1050px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		margin-bottom: 20px;
 	}
 
 	&__subtitle {
 		@include adaptive-font(16, 14);
-		position: absolute;
-		right: 260px;
-		bottom: 5px;
 		margin: 0;
+		margin-left: auto;
 		max-width: 415px;
 		font-weight: 300;
 
-		@media (max-width: 1050px) {
-			position: relative;
+		@media (max-width: 768px) {
+			margin: 0;
 		}
 	}
 

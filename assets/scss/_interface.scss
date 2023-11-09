@@ -418,3 +418,94 @@
 		gap: 15px;
 	}
 }
+
+.label {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	cursor: pointer;
+
+	&--error {
+		animation: head-shake 0.7s;
+	}
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	cursor: pointer;
+
+	&__real {
+		position: absolute;
+		z-index: -1;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+
+	&__fake {
+		position: relative;
+		flex-shrink: 0;
+		border: 2px solid var(--gray-color);
+		width: 16px;
+		height: 16px;
+		background-image: url('@img/icons/sprite.svg#check-mark');
+		background-position: center;
+		background-size: 0;
+		background-repeat: no-repeat;
+		transition: background-size 0.2s;
+		cursor: pointer;
+	}
+
+	&__real:checked ~ &__fake {
+		background-size: 11px;
+	}
+}
+
+.radio {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	cursor: pointer;
+
+	&__real {
+		position: absolute;
+		z-index: -1;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+
+	&__fake {
+		position: relative;
+		display: inline-block;
+		flex-shrink: 0;
+		border: 1px solid var(--light-gray-color);
+		border-radius: 50%;
+		width: 16px;
+		height: 16px;
+		background-color: var(--light-color);
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			width: 8px;
+			height: 8px;
+			background-color: var(--gray-color);
+			transform: translate(-50%, -50%) scale(0);
+			transition: 0.2s ease-in;
+		}
+	}
+
+	&__real:checked + &__fake::before {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}

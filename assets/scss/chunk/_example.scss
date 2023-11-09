@@ -1,0 +1,60 @@
+.example {
+	&__title {
+		max-width: 870px;
+	}
+
+	&__wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: end;
+		justify-content: space-between;
+		gap: 15px;
+
+		@media (max-width: 480px) {
+			gap: 30px;
+		}
+	}
+
+	&__left {
+		max-width: 615px;
+
+		& img {
+			height: 450px;
+		}
+
+		@media (max-width: 1050px) {
+			margin: 0 auto;
+		}
+	}
+
+	&__text {
+		margin-bottom: 20px;
+
+		&--margin {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__right {
+		max-width: 365px;
+		@media (max-width: 1050px) {
+			max-width: 100%;
+		}
+		@media (max-width: 480px) {
+			max-width: fit-content;
+		}
+	}
+
+	&__subtitle {
+		@include adaptive-font(16, 14);
+		margin: 0;
+		margin-bottom: 30px;
+		font-weight: 500;
+		line-height: 125%;
+		text-transform: uppercase;
+
+		@media (max-width: 480px) {
+			margin-bottom: 20px;
+		}
+	}
+}

@@ -1,19 +1,6 @@
 .estimate {
-	&__title {
-		margin-left: auto;
-		max-width: 830px;
-	}
-
-	&__wrap {
-		margin-left: auto;
-		max-width: 830px;
-
-		@media (max-width: 1050px) {
-			margin: 0;
-			width: 100%;
-			max-width: 100%;
-		}
-	}
+	margin-left: auto;
+	max-width: 870px;
 
 	&__text {
 		margin-bottom: 30px;
@@ -36,5 +23,11 @@
 		@media (max-width: 480px) {
 			align-items: start;
 		}
+	}
+
+	@media (max-width: 1050px) {
+		margin: 0;
+		width: 100%;
+		max-width: 100%;
 	}
 }

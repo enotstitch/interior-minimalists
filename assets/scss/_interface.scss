@@ -231,6 +231,7 @@
 		margin: 0;
 		padding-top: 20px;
 		padding-bottom: 40px;
+		width: 100%;
 		max-width: 250px;
 		font-weight: 500;
 		text-transform: uppercase;
@@ -258,6 +259,10 @@
 			flex-direction: column;
 		}
 
+		&--border {
+			border-bottom: 1px solid var(--light-gray-color);
+		}
+
 		@media (max-width: 1050px) {
 			border: none;
 			padding-top: 0;
@@ -266,6 +271,10 @@
 
 			&--border {
 				border-bottom: 1px solid var(--light-gray-color);
+			}
+
+			&--padding {
+				padding-top: 20px;
 			}
 		}
 
@@ -392,18 +401,29 @@
 	}
 }
 
-.form {
-	max-width: 460px;
+.form-blog {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	margin-left: auto;
+	max-width: 870px;
 
 	&__title {
+		margin: 0;
 		margin-bottom: 40px;
 		font-weight: 500;
 		text-transform: uppercase;
 	}
 
 	&__questions {
+		flex-shrink: 0;
 		border: 1px solid var(--light-gray-color);
 		padding: 70px;
+		max-width: 460px;
+
+		@media (max-width: 480px) {
+			padding: 40px 25px;
+		}
 	}
 
 	&__labels {
@@ -417,14 +437,45 @@
 		align-items: start;
 		gap: 15px;
 	}
+
+	@media (max-width: 992px) {
+		flex-direction: column;
+		align-items: center;
+		gap: 60px;
+	}
+}
+
+.contacts-info {
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 365px;
+
+	&__labels {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		margin-bottom: 55px;
+	}
+
+	&__submit {
+		margin-bottom: 10px;
+		padding: 28px;
+		width: 100%;
+
+		@media (max-width: 480px) {
+			padding: 25px 15px;
+		}
+	}
 }
 
 .label {
 	display: flex;
-	align-items: center;
-	gap: 10px;
+	align-items: start;
 	width: 100%;
+	line-height: 125%;
+	color: var(--dark-color);
 	cursor: pointer;
+	gap: 15px;
 
 	&--error {
 		animation: head-shake 0.7s;
@@ -432,12 +483,6 @@
 }
 
 .checkbox {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	width: 100%;
-	cursor: pointer;
-
 	&__real {
 		position: absolute;
 		z-index: -1;
@@ -449,6 +494,7 @@
 	&__fake {
 		position: relative;
 		flex-shrink: 0;
+		margin-top: 3px;
 		border: 2px solid var(--gray-color);
 		width: 16px;
 		height: 16px;
@@ -466,12 +512,6 @@
 }
 
 .radio {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	width: 100%;
-	cursor: pointer;
-
 	&__real {
 		position: absolute;
 		z-index: -1;
@@ -484,6 +524,7 @@
 		position: relative;
 		display: inline-block;
 		flex-shrink: 0;
+		margin-top: 3px;
 		border: 1px solid var(--light-gray-color);
 		border-radius: 50%;
 		width: 16px;
@@ -583,5 +624,22 @@
 	&__name {
 		font-weight: 500;
 		text-transform: uppercase;
+	}
+}
+
+.policy-label {
+	display: flex;
+	align-items: start;
+	gap: 15px;
+	width: 100%;
+	cursor: pointer;
+
+	&__text {
+		margin: 0;
+		font-size: 12px;
+	}
+
+	&__link {
+		border-bottom: 1px solid var(--dark-color);
 	}
 }

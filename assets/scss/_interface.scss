@@ -509,3 +509,22 @@
 		transform: translate(-50%, -50%) scale(1);
 	}
 }
+
+.blog-author {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	max-width: 240px;
+	gap: 25px;
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	&__name {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}

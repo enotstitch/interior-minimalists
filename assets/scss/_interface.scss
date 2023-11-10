@@ -410,6 +410,10 @@
 		border: 1px solid var(--light-gray-color);
 		padding: 70px;
 		max-width: 460px;
+
+		@media (max-width: 480px) {
+			padding: 40px 25px;
+		}
 	}
 
 	&__labels {
@@ -422,6 +426,12 @@
 		display: flex;
 		align-items: start;
 		gap: 15px;
+	}
+
+	@media (max-width: 992px) {
+		flex-direction: column;
+		align-items: center;
+		gap: 60px;
 	}
 }
 

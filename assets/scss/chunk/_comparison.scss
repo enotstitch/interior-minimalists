@@ -1,0 +1,29 @@
+.comparison {
+	&__wrap {
+		margin-left: auto;
+		max-width: 870px;
+	}
+
+	.table-list {
+		margin: 0;
+		padding-left: 25px;
+
+		&__item {
+			margin-bottom: 10px;
+
+			&::after,
+			&::before {
+				display: none;
+			}
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	.table__text {
+		width: 100%;
+		max-width: 100%;
+	}
+}

@@ -1,19 +1,18 @@
 .situation {
+	&__wrap {
+		margin-left: auto;
+		max-width: 870px;
+	}
+
 	&__title {
 		margin-bottom: 20px;
 	}
 
 	&__text {
 		margin-bottom: 50px;
-		text-align: center;
 
 		@media (max-width: 480px) {
 			margin-bottom: 30px;
-			text-align: start;
 		}
-	}
-
-	&__form {
-		margin-left: auto;
 	}
 }

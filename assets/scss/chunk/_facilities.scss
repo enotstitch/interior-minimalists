@@ -1,0 +1,25 @@
+.facilities {
+	&__table {
+		margin-bottom: 50px;
+	}
+
+	.table__text {
+		max-width: 100%;
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 120px;
+		margin-left: auto;
+		max-width: 870px;
+		gap: 20px;
+	}
+
+	&__text {
+		&--weight {
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+}

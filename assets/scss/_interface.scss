@@ -392,18 +392,24 @@
 	}
 }
 
-.form {
-	max-width: 460px;
+.form-blog {
+	display: flex;
+	align-items: end;
+	justify-content: end;
+	gap: 40px;
 
 	&__title {
+		margin: 0;
 		margin-bottom: 40px;
 		font-weight: 500;
 		text-transform: uppercase;
 	}
 
 	&__questions {
+		flex-shrink: 0;
 		border: 1px solid var(--light-gray-color);
 		padding: 70px;
+		max-width: 460px;
 	}
 
 	&__labels {
@@ -419,12 +425,33 @@
 	}
 }
 
+.contacts-info {
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 365px;
+
+	&__labels {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		margin-bottom: 55px;
+	}
+
+	&__submit {
+		margin-bottom: 10px;
+		padding: 28px;
+		width: 100%;
+	}
+}
+
 .label {
 	display: flex;
-	align-items: center;
-	gap: 10px;
+	align-items: start;
 	width: 100%;
+	line-height: 125%;
+	color: var(--dark-color);
 	cursor: pointer;
+	gap: 15px;
 
 	&--error {
 		animation: head-shake 0.7s;
@@ -432,12 +459,6 @@
 }
 
 .checkbox {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	width: 100%;
-	cursor: pointer;
-
 	&__real {
 		position: absolute;
 		z-index: -1;
@@ -449,6 +470,7 @@
 	&__fake {
 		position: relative;
 		flex-shrink: 0;
+		margin-top: 3px;
 		border: 2px solid var(--gray-color);
 		width: 16px;
 		height: 16px;
@@ -466,12 +488,6 @@
 }
 
 .radio {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	width: 100%;
-	cursor: pointer;
-
 	&__real {
 		position: absolute;
 		z-index: -1;
@@ -507,5 +523,22 @@
 
 	&__real:checked + &__fake::before {
 		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.policy-label {
+	display: flex;
+	align-items: start;
+	gap: 15px;
+	width: 100%;
+	cursor: pointer;
+
+	&__text {
+		margin: 0;
+		font-size: 12px;
+	}
+
+	&__link {
+		border-bottom: 1px solid var(--dark-color);
 	}
 }

@@ -551,6 +551,80 @@
 	}
 }
 
+.quote {
+	display: flex;
+	justify-content: space-between;
+	gap: 55px;
+
+	&__author {
+		display: flex;
+		flex-shrink: 0;
+		flex-direction: column;
+		max-width: 240px;
+		gap: 25px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__info {
+		margin-left: auto;
+		text-align: end;
+
+		&--desktop {
+			@media (max-width: 992px) {
+				display: none;
+			}
+		}
+
+		&--mobile {
+			display: none;
+			@media (max-width: 992px) {
+				display: block;
+			}
+		}
+
+		@media (max-width: 992px) {
+			margin-left: 0;
+			text-align: start;
+		}
+	}
+
+	&__name {
+		display: block;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	@media (max-width: 992px) {
+		flex-direction: column-reverse;
+	}
+}
+
+.blog-author {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	max-width: 240px;
+	gap: 25px;
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	&__name {
+		font-weight: 500;
+		text-transform: uppercase;
+
 .policy-label {
 	display: flex;
 	align-items: start;

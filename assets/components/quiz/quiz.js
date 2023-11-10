@@ -77,7 +77,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 		data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">
-							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link link-reset" href="#/">Политикой
+							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link link-reset" target="_blank" href="politikal.html">Политикой
 								конфиденциальности</a>
 						</p>
 					</label>

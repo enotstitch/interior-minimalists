@@ -1,5 +1,5 @@
 import { header } from '../components/header/header';
-import { formInputMask } from './functions/formInputMask';
+import { formInputMask } from './functions/validateForms';
 import { select } from './functions/select';
 import { quiz } from '../components/quiz/quiz';
 import { spollers } from '../components/spollers/spollers';

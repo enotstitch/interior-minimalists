@@ -134,7 +134,7 @@
 			</div>
 		</div>
 
-		<div class="modal" id="modal">
+		<div class="modal" id="modalForm">
 			<div class="modal__body">
 				<div class="modal__content">
 					<a class="modal__close close-modal" href="#header">X</a>
@@ -143,13 +143,13 @@
 						Мы свяжемся с вами в ближайшее рабочее время, пн.–пт. с 9 до 18
 					</div>
 
-					<form class="contacts-info" id="form" action="mail.php" method="POST" autocomplete="off">
+					<form class="contacts-info modal-form" autocomplete="off">
 						<div class="contacts-info__labels">
 							<label class="contacts-info__label">
 								<input class="contacts-info__input" name="name" type="text" placeholder="Ваше имя">
 							</label>
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" id="tel" name="tel" type="tel" data-validate-field="tel">
+								<input class="contacts-info__input" name="tel" type="tel">
 							</label>
 
 							<div class="select">
@@ -192,7 +192,7 @@
 
 						</div>
 
-						<button class="contacts-info__submit link btn-reset" type="submit">
+						<button class="contacts-info__submit link btn-reset">
 							<span class="link__text">Отправить результаты</span>
 							<svg class="link__svg">
 								<use href="@img/icons/sprite.svg#arrow"></use>
@@ -200,7 +200,7 @@
 						</button>
 
 						<label class="policy-label checkbox">
-							<input class="checkbox__real" name="contacts" type="checkbox" data-validate-field="checkbox">
+							<input class="checkbox__real" type="checkbox">
 							<div class="checkbox__fake"></div>
 							<p class="policy-label__text">
 								Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"

@@ -1,4 +1,4 @@
-import formInputMask from '../../js/functions/formInputMask';
+import formInputMask from '../../js/functions/validateForms';
 import quizData from './quizData';
 
 const quizTemplate = (data = [], dataLength, options) => {

@@ -81,3 +81,9 @@ img {
 .js-focus-visible :focus:not(.focus-visible) {
 	outline: none;
 }
+
+.js-validate-error-label {
+	font-size: 12px;
+	line-height: 150%;
+	color: var(--error-color);
+}

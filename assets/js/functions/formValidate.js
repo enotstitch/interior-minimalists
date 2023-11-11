@@ -4,4 +4,4 @@ const formValidate = () => {
 	im.mask(inputsPhone);
 };
 
-export default formValidate;
+export default formValidate();

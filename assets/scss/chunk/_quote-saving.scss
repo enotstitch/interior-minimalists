@@ -3,6 +3,11 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 55px;
+		margin-bottom: 120px;
+
+		@media (max-width: 768px) {
+			margin-bottom: 60px;
+		}
 
 		@media (max-width: 992px) {
 			flex-direction: column-reverse;

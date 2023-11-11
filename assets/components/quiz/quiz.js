@@ -1,4 +1,4 @@
-import formValidate from '../../js/functions/formValidate';
+import formInputMask from '../../js/functions/formInputMask';
 import quizData from './quizData';
 
 const quizTemplate = (data = [], dataLength, options) => {
@@ -171,7 +171,7 @@ class Quiz {
 				}
 
 				if (this.counter + 1 === this.dataLength) {
-					formValidate();
+					formInputMask();
 				}
 			}
 		}

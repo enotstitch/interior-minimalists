@@ -30,6 +30,16 @@
 		opacity: 0;
 		transform: perspective(600px) translate(0, -100%) rotateX(45deg);
 		transition: all 0.8s ease 0s;
+
+		@media (max-width: 480px) {
+			padding: 30px 20px;
+		}
+	}
+
+	&__images {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
 	}
 
 	&__close {

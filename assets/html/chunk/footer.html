@@ -17,7 +17,7 @@
 					</picture>
 				</a>
 				<a class="footer__link footer__link--mobile footer__link--gray footer__link--icon link-reset"
-					href="https://go.2gis.com/33p1z">
+					href="https://go.2gis.com/v2fe6">
 					<span class="footer__link footer__link--underline">Открыть в 2гис</span>
 				</a>
 				<p class="footer__text">
@@ -51,7 +51,7 @@
 						</li>
 					</ul>
 					<a class="footer__link footer__link--desktop footer__link--gray footer__link--icon link-reset"
-						href="https://go.2gis.com/33p1z" target="_blank">
+						href="https://go.2gis.com/v2fe6" target="_blank">
 						<span class="footer__link footer__link--underline">Открыть в 2гис</span>
 					</a>
 					<div class="footer__contacts footer__contacts--mobile footer-contacts">
@@ -151,6 +151,45 @@
 							<label class="contacts-info__label">
 								<input class="contacts-info__input" id="tel" name="tel" type="tel" data-validate-field="tel">
 							</label>
+
+							<div class="select">
+								<div class="select__header">
+									<span class="select__current">Время для звонка</span>
+									<svg class="select__arrow">
+										<use href="img/icons/sprite.svg#arrow-down"></use>
+									</svg>
+								</div>
+
+								<div class="select__body">
+									<div class="select__item">09:00</div>
+									<div class="select__item">10:00</div>
+									<div class="select__item">11:00</div>
+									<div class="select__item">12:00</div>
+									<div class="select__item">13:00</div>
+									<div class="select__item">14:00</div>
+									<div class="select__item">15:00</div>
+									<div class="select__item">16:00</div>
+									<div class="select__item">17:00</div>
+									<div class="select__item">18:00</div>
+									<div class="select__item">19:00</div>
+								</div>
+							</div>
+
+							<div class="select">
+								<div class="select__header">
+									<span class="select__current">Способ связи</span>
+									<svg class="select__arrow">
+										<use href="img/icons/sprite.svg#arrow-down"></use>
+									</svg>
+								</div>
+
+								<div class="select__body">
+									<div class="select__item">Телефон</div>
+									<div class="select__item">Whats App</div>
+									<div class="select__item">Telegram</div>
+								</div>
+							</div>
+
 						</div>
 
 						<button class="contacts-info__submit link btn-reset" type="submit">
@@ -170,6 +209,29 @@
 							</p>
 						</label>
 					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" id="modalPhoto">
+			<div class="modal__body">
+				<div class="modal__content">
+					<a class="modal__close close-modal" href="#header">X</a>
+					<div class="modal__title">Примеры рабочих моментов комплектации</div>
+					<div class="modal__inner">
+						<div class="modal__images">
+							<picture>
+								<source type="image/webp" data-srcset="@img/delegation/delegation-img-1.webp">
+								<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-1.jpg">
+							</picture>
+							<div class="modal__img">
+								<picture>
+									<source type="image/webp" data-srcset="@img/delegation/delegation-img-2.webp">
+									<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-2.jpg">
+								</picture>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

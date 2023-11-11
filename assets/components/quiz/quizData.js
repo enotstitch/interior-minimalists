@@ -58,7 +58,7 @@ const quizData = [
 				type: 'radio',
 			},
 			{
-				answer_title: 'Через 1/2 месяца',
+				answer_title: 'Через 1-2 месяца',
 				type: 'radio',
 			},
 			{

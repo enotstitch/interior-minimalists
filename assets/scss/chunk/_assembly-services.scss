@@ -37,27 +37,23 @@
 		}
 	}
 
-	&__bottom {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: end;
-		justify-content: center;
+	&__subtitle {
+		@include adaptive-font(40, 20);
+		margin: 0;
+		margin-bottom: 50px;
 		margin-left: auto;
-		width: fit-content;
-		gap: 143px;
+		max-width: 870px;
+		font-weight: 500;
+		line-height: 125%;
+		text-transform: uppercase;
 
-		@media (max-width: 768px) {
-			width: 100%;
+		@media (min-width: 1250px) {
+			font-size: 40px;
 		}
 	}
 
-	&__socials {
-		max-width: 363px;
-	}
-}
-
-.assembly-services-socials {
-	&__text {
-		margin-bottom: 30px;
+	&__consultation {
+		margin-left: auto;
+		max-width: 870px;
 	}
 }

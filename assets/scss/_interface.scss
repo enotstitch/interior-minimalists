@@ -128,12 +128,22 @@
 	gap: 20px;
 
 	&__svg {
-		width: 15px;
-		height: 15px;
+		width: 16px;
+		height: 16px;
+		background-image: url('@img/icons/sprite.svg#arrow');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	&:hover {
 		opacity: 0.5;
+	}
+
+	&--active {
+		.link__svg {
+			background-image: url('@img/icons/sprite.svg#loading-circle');
+		}
 	}
 
 	@media (max-width: 768px) {

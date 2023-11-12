@@ -32,7 +32,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 			return `
 			<label class="quiz-question__label">
 				<input class="quiz-question__checkbox-real" type="checkbox" name="${data.answer_alias}" value="${item.answer_title}" data-valid="false">
-				<div class="quiz-question__checkbox-fake"></div>
+				<span class="quiz-question__checkbox-fake"></span>
 				<span>${item.answer_title}</span>
 			</label>
 			`;
@@ -75,10 +75,10 @@ const quizTemplate = (data = [], dataLength, options) => {
 					<label class="quiz-question__label">
 							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
-						<p class="quiz-question__policy">
+						<span class="quiz-question__policy">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link link-reset" target="_blank" href="politikal.html">Политикой
 								конфиденциальности</a>
-						</p>
+						</span>
 					</label>
 				</div>
 			</div>

@@ -18,6 +18,7 @@
 	&__title {
 		@include adaptive-font(18, 16);
 		position: relative;
+		padding: 0 40px 0 0;
 		width: 100%;
 		font-weight: 500;
 		text-align: left;
@@ -32,21 +33,13 @@
 		}
 	}
 
-	&.init .spollers__title {
-		padding: 0 40px 0 0;
-	}
-
-	&.init .spollers__title::before,
-	&.init .spollers__title::after {
-		content: '';
+	&__control {
 		position: absolute;
 		left: -30px;
 		top: 50%;
-		width: 11px;
-		height: 2px;
-		background-color: var(--dark-color);
+		width: 25px;
+		height: 25px;
 		transform: translateY(-50%);
-		transition: transform 0.3s ease 0s;
 
 		@media (max-width: 992px) {
 			left: unset;
@@ -54,11 +47,55 @@
 		}
 	}
 
-	&.init .spollers__title::after {
+	&.init &__control::before,
+	&.init &__control::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		background-color: var(--dark-color);
+		transform: translate(-50%, -50%);
+		transition: all 0.3s ease 0s;
+	}
+
+	&.init &__control::before {
+		width: 11px;
+		height: 2px;
+	}
+
+	&.init &__control::after {
+		width: 2px;
+		height: 12px;
+	}
+
+	&.init &__title.active &__control::after {
+		top: 29%;
 		transform: rotate(-90deg);
 	}
 
-	&.init .spollers__title.active::after {
-		transform: rotate(0deg);
-	}
+	// &.init .spollers__title::before,
+	// &.init .spollers__title::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	left: -30px;
+	// 	top: 50%;
+	// 	width: 11px;
+	// 	height: 2px;
+	// 	background-color: var(--dark-color);
+	// 	transform: translateY(-50%);
+	// 	transition: transform 0.3s ease 0s;
+
+	// 	@media (max-width: 992px) {
+	// 		left: unset;
+	// 		right: 0;
+	// 	}
+	// }
+
+	// &.init .spollers__title::after {
+	// 	transform: rotate(-90deg);
+	// }
+
+	// &.init .spollers__title.active::after {
+	// 	transform: rotate(0deg);
+	// }
 }

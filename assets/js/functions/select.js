@@ -14,6 +14,12 @@ let select = function () {
 
 	selectHeader.forEach((item) => {
 		item.addEventListener('click', selectToggle);
+
+		let selectCurrent = item.querySelector('.select__current');
+		selectCurrent.addEventListener('blur', () => {
+			selectActive = selectCurrent.closest('.select');
+			selectActive.classList.remove('is-active');
+		});
 	});
 
 	selectItem.forEach((item) => {

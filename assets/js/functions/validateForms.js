@@ -1,5 +1,7 @@
 import JustValidate from '../libs/just-validate.min';
 
+const modalSend = document.getElementById('modalSend');
+
 const formInputMask = () => {
 	let inputsPhone = document.querySelectorAll('input[type="tel"]');
 	let im = new Inputmask('+7 (999) 999-99-99');
@@ -76,6 +78,8 @@ validationModal
 		xhr.open('POST', 'mail.php', true);
 		xhr.send(formData);
 
+		modalSend.classList.add('open');
+
 		event.target.reset();
 
 		const selectes = document.querySelectorAll('.select__current');
@@ -107,6 +111,8 @@ try {
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
+			modalSend.classList.add('open');
+
 			event.target.reset();
 		});
 } catch {}
@@ -134,6 +140,8 @@ try {
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
+
+			modalSend.classList.add('open');
 
 			event.target.reset();
 		});
@@ -163,6 +171,8 @@ try {
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
+			modalSend.classList.add('open');
+
 			event.target.reset();
 		});
 } catch {}
@@ -190,6 +200,8 @@ try {
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
+
+			modalSend.classList.add('open');
 
 			event.target.reset();
 		});

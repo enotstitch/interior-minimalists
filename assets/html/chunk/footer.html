@@ -217,20 +217,30 @@
 				<div class="modal__content">
 					<a class="modal__close close-modal" href="#header">X</a>
 					<div class="modal__title">Примеры рабочих моментов комплектации</div>
-					<div class="modal__inner">
-						<div class="modal__images">
+					<div class="modal__images">
+						<picture>
+							<source type="image/webp" data-srcset="@img/delegation/delegation-img-1.webp">
+							<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-1.jpg">
+						</picture>
+						<div class="modal__img">
 							<picture>
-								<source type="image/webp" data-srcset="@img/delegation/delegation-img-1.webp">
-								<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-1.jpg">
+								<source type="image/webp" data-srcset="@img/delegation/delegation-img-2.webp">
+								<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-2.jpg">
 							</picture>
-							<div class="modal__img">
-								<picture>
-									<source type="image/webp" data-srcset="@img/delegation/delegation-img-2.webp">
-									<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-2.jpg">
-								</picture>
-							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal" id="modalSend">
+			<div class="modal__body">
+				<div class="modal__content">
+					<a class="modal__close close-modal" href="#header">X</a>
+					<div class="modal__title modal__title--text-align">Спасибо, мы получили ваш запрос на обратную связь</div>
+					<p class="modal__text modal__text--center text">
+						Если вы заказали звонок, ожидайте его с номера
+					</p>
+					<a class="modal__phone link-reset" href="tel:+79628383900">+7 962 838 39 00</a>
 				</div>
 			</div>
 		</div>

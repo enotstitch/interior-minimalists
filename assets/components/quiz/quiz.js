@@ -245,6 +245,7 @@ class Quiz {
 	}
 
 	send() {
+		const modalSend = document.getElementById('modalSend');
 		let elements = this.$el.querySelectorAll('input');
 		let isValid = true;
 		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
@@ -284,6 +285,8 @@ class Quiz {
 				method: 'POST',
 				body: formData,
 			});
+
+			modalSend.classList.add('open');
 
 			this.$el.reset();
 		}

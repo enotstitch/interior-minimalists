@@ -28,7 +28,8 @@ let select = function () {
 		let text = this.innerText,
 			select = this.closest('.select'),
 			currentText = select.querySelector('.select__current');
-		currentText.innerText = text;
+		currentText.value = text;
+		currentText.setAttribute('size', currentText.value.length);
 		select.classList.remove('is-active');
 	}
 };

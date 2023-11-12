@@ -6,44 +6,83 @@ const formInputMask = () => {
 	im.mask(inputsPhone);
 };
 
-const rules = [
+const telRules = [
 	{
 		rule: 'required',
 		value: true,
 		errorMessage: 'Телефон обязателен',
 	},
-	// {
-	// 	rule: 'function',
-	// 	validator: function () {
-	// 		const phone = telSelector.inputmask.unmaskedvalue();
-	// 		return phone.length === 10;
-	// 	},
-	// 	errorMessage: 'Введите корректный телефон',
-	// },
+	{
+		rule: 'function',
+		validator: function (isChange, fields) {
+			const telElem = fields['input[type="tel"]'].elem;
+			const phone = telElem.inputmask.unmaskedvalue();
+			return phone.length === 10;
+		},
+		errorMessage: 'Введите корректный телефон',
+	},
+];
+
+const buttonRules = [
+	{
+		rule: 'function',
+		validator: function () {
+			return true;
+		},
+	},
+];
+
+const politikalRules = [
+	{
+		rule: 'required',
+		value: false,
+		errorMessage: 'Согласитесь с обработкой персональных данных',
+	},
+	{
+		rule: 'function',
+		validator: function (isChecked, fields) {
+			const submit = fields['.contacts-info__submit'].elem;
+			if (!isChecked) {
+				submit.setAttribute('disabled', 'disabled');
+				return false;
+			} else {
+				submit.removeAttribute('disabled');
+				return true;
+			}
+		},
+		errorMessage: 'Согласитесь с обработкой персональных данных',
+	},
 ];
 
 const validationModal = new JustValidate('.modal-form');
 
-validationModal.addField('input[type="tel"]', rules).onSuccess((event) => {
-	let formData = new FormData(event.target);
+validationModal
+	.addField('input[type="tel"]', telRules)
+	.addField('.contacts-info__submit', buttonRules)
+	.addField('.politikal', politikalRules)
+	.onSuccess((event) => {
+		let formData = new FormData(event.target);
 
-	console.log(...formData); // ! DELETE
+		let xhr = new XMLHttpRequest();
 
-	let xhr = new XMLHttpRequest();
-
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4) {
-			if (xhr.status === 200) {
-				console.log('Отправлено'); // ! DELETE
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+					console.log('Отправлено');
+				}
 			}
-		}
-	};
+		};
 
-	xhr.open('POST', 'mail.php', true);
-	xhr.send(formData);
+		xhr.open('POST', 'mail.php', true);
+		xhr.send(formData);
 
-	event.target.reset();
-});
+		event.target.reset();
+
+		const selectes = document.querySelectorAll('.select__current');
+		selectes.forEach((select) => {
+			select.setAttribute('size', select.placeholder.length);
+		});
+	});
 
 try {
 	formInputMask();

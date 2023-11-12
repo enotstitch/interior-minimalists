@@ -73,8 +73,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 						</svg>
 					</button>
 					<label class="quiz-question__label">
-							<input class="quiz-question__checkbox-real" type="checkbox" name={"contacts"}"
-		data-valid="false">
+							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link link-reset" target="_blank" href="politikal.html">Политикой
@@ -252,7 +251,7 @@ class Quiz {
 
 		for (let item of this.resultArray) {
 			for (let obj in item) {
-				formData.append(obj, item[obj].substring(0, item[obj].length - 1));
+				formData.append(obj, item[obj].substring(0, item[obj].length - 2));
 			}
 		}
 
@@ -260,6 +259,8 @@ class Quiz {
 			method: 'POST',
 			body: formData,
 		});
+
+		console.log(formData);
 	}
 
 	serialize(form) {

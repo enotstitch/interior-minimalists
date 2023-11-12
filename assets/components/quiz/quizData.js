@@ -18,55 +18,55 @@ const quizData = [
 			},
 		],
 	},
-	{
-		number: 2,
-		title: 'Укажите площадь объекта',
-		answer_alias: 'Площадь объекта',
-		answers: [
-			{
-				answer_title: '',
-				type: 'square',
-			},
-		],
-	},
-	{
-		number: 3,
-		title: 'Какие услуги вам нужны?',
-		answer_alias: 'Нужные услуги',
-		answers: [
-			{
-				answer_title: 'Отделка',
-				type: 'checkbox',
-			},
-			{
-				answer_title: 'Комплектация',
-				type: 'checkbox',
-			},
-			{
-				answer_title: 'Дизайн-проект',
-				type: 'checkbox',
-			},
-		],
-	},
-	{
-		number: 4,
-		title: 'Когда вы планируете начать реализацию вашего проекта?',
-		answer_alias: 'Дата начала реализации проекта',
-		answers: [
-			{
-				answer_title: 'До 1 месяца',
-				type: 'radio',
-			},
-			{
-				answer_title: 'Через 1-2 месяца',
-				type: 'radio',
-			},
-			{
-				answer_title: 'Позднее 2 месяцев',
-				type: 'radio',
-			},
-		],
-	},
+	// 	{
+	// 		number: 2,
+	// 		title: 'Укажите площадь объекта',
+	// 		answer_alias: 'Площадь объекта',
+	// 		answers: [
+	// 			{
+	// 				answer_title: '',
+	// 				type: 'square',
+	// 			},
+	// 		],
+	// 	},
+	// 	{
+	// 		number: 3,
+	// 		title: 'Какие услуги вам нужны?',
+	// 		answer_alias: 'Нужные услуги',
+	// 		answers: [
+	// 			{
+	// 				answer_title: 'Отделка',
+	// 				type: 'checkbox',
+	// 			},
+	// 			{
+	// 				answer_title: 'Комплектация',
+	// 				type: 'checkbox',
+	// 			},
+	// 			{
+	// 				answer_title: 'Дизайн-проект',
+	// 				type: 'checkbox',
+	// 			},
+	// 		],
+	// 	},
+	// 	{
+	// 		number: 4,
+	// 		title: 'Когда вы планируете начать реализацию вашего проекта?',
+	// 		answer_alias: 'Дата начала реализации проекта',
+	// 		answers: [
+	// 			{
+	// 				answer_title: 'До 1 месяца',
+	// 				type: 'radio',
+	// 			},
+	// 			{
+	// 				answer_title: 'Через 1-2 месяца',
+	// 				type: 'radio',
+	// 			},
+	// 			{
+	// 				answer_title: 'Позднее 2 месяцев',
+	// 				type: 'radio',
+	// 			},
+	// 		],
+	// 	},
 	{
 		number: 5,
 		title: 'Оставьте ваши контакты',

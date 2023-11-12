@@ -78,7 +78,7 @@
 					</p>
 				</div>
 
-				<form class="form-blog" action="#">
+				<form class="form-blog facilities-form" autocomplete="off">
 					<div class="form-blog__questions">
 						<p class="form-blog__title">
 							Кто будет заниматься снабжением вашего интерьера чистовыми материалами и оборудованием?
@@ -86,19 +86,19 @@
 
 						<div class="form-blog__labels">
 							<label class="label radio">
-								<input class="radio__real" type="radio" name="who" value="Готов поручить вам решение этого вопроса">
+								<input class="radio__real" type="radio" name="Кто будет заниматься снабжением" value="Готов поручить вам решение этого вопроса">
 								<div class="radio__fake"></div>
 								<span>Готов поручить вам решение этого вопроса</span>
 							</label>
 
 							<label class="label radio">
-								<input class="radio__real" type="radio" name="who" value="Самостоятельно, располагаю возможностью">
+								<input class="radio__real" type="radio" name="Кто будет заниматься снабжением" value="Самостоятельно, располагаю возможностью">
 								<div class="radio__fake"></div>
 								<span>Самостоятельно, располагаю возможностью</span>
 							</label>
 
 							<label class="label radio">
-								<input class="radio__real" type="radio" name="who" value="Самостоятельно и/или с подрядчиком">
+								<input class="radio__real" type="radio" name="Кто будет заниматься снабжением" value="Самостоятельно и/или с подрядчиком">
 								<div class="radio__fake"></div>
 								<span>Самостоятельно и/или с подрядчиком</span>
 							</label>
@@ -109,26 +109,24 @@
 					<div class="contacts-info">
 						<div class="contacts-info__labels">
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" type="text" placeholder="Ваше имя">
+								<input class="contacts-info__input" name="Имя" type="text" placeholder="Ваше имя">
 							</label>
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" type="tel">
+								<input class="contacts-info__input" name="Телефон" type="tel">
 							</label>
 						</div>
 
-						<button class="contacts-info__submit link btn-reset">
+						<button class="contacts-info__submit link btn-reset" disabled="disabled">
 							<span class="link__text">Отправить результаты</span>
-							<svg class="link__svg">
-								<use href="@img/icons/sprite.svg#arrow"></use>
-							</svg>
+							<div class="link__svg"></div>
 						</button>
 
 						<label class="policy-label checkbox">
-							<input class="checkbox__real" type="radio" name="contacts">
+							<input class="checkbox__real politikal" type="checkbox">
 							<div class="checkbox__fake"></div>
 							<p class="policy-label__text">
 								Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"
-									target="_blank" href="politikal.html">Политикой
+									href="#/">Политикой
 									конфиденциальности</a>
 							</p>
 						</label>

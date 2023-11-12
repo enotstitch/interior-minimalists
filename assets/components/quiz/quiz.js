@@ -245,23 +245,21 @@ class Quiz {
 	}
 
 	send() {
-		if (this.valid()) {
-			let elements = this.$el.querySelectorAll('input');
-			elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
+		let elements = this.$el.querySelectorAll('input');
+		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-			const formData = new FormData();
+		const formData = new FormData();
 
-			for (let item of this.resultArray) {
-				for (let obj in item) {
-					formData.append(obj, item[obj].substring(0, item[obj].length - 1));
-				}
+		for (let item of this.resultArray) {
+			for (let obj in item) {
+				formData.append(obj, item[obj].substring(0, item[obj].length - 1));
 			}
-
-			const response = fetch('mail.php', {
-				method: 'POST',
-				body: formData,
-			});
 		}
+
+		const response = fetch('mail.php', {
+			method: 'POST',
+			body: formData,
+		});
 	}
 
 	serialize(form) {

@@ -154,7 +154,8 @@
 
 							<div class="select">
 								<div class="select__header">
-									<span class="select__current">Время для звонка</span>
+									<input class="select__current" type="text" name="Время звонка" value="" readonly
+										placeholder="Время для звонка" size="14">
 									<svg class="select__arrow">
 										<use href="img/icons/sprite.svg#arrow-down"></use>
 									</svg>
@@ -177,7 +178,8 @@
 
 							<div class="select">
 								<div class="select__header">
-									<span class="select__current">Способ связи</span>
+									<input class="select__current" type="text" name="Способ связи" value="" readonly
+										placeholder="Способ связи" size="11">
 									<svg class="select__arrow">
 										<use href="img/icons/sprite.svg#arrow-down"></use>
 									</svg>
@@ -192,7 +194,7 @@
 
 						</div>
 
-						<button class="contacts-info__submit link btn-reset">
+						<button class="contacts-info__submit link btn-reset" disabled="disabled">
 							<span class="link__text">Отправить результаты</span>
 							<svg class="link__svg">
 								<use href="@img/icons/sprite.svg#arrow"></use>
@@ -200,7 +202,7 @@
 						</button>
 
 						<label class="policy-label checkbox">
-							<input class="checkbox__real" type="checkbox">
+							<input class="checkbox__real politikal" type="checkbox">
 							<div class="checkbox__fake"></div>
 							<p class="policy-label__text">
 								Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"

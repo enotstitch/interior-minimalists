@@ -25,11 +25,13 @@ let select = function () {
 	}
 
 	function selectChoose() {
-		let text = this.innerText,
-			select = this.closest('.select'),
-			currentText = select.querySelector('.select__current');
-		currentText.value = text;
-		currentText.setAttribute('size', currentText.value.length);
+		let text = this.innerText;
+		let select = this.closest('.select');
+		let currentInput = select.querySelector('.select__current');
+
+		currentInput.value = text;
+		currentInput.setAttribute('size', currentInput.value.length);
+
 		select.classList.remove('is-active');
 	}
 };

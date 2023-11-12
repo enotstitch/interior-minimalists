@@ -53,7 +53,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 		}
 	});
 
-	if (data.answer_alias === 'contacts') {
+	if (data.answer_alias === 'Имя и телефон') {
 		return `
 		<div class="quiz__content">
 			<div class="quiz__header quiz-header quiz-header--margin">
@@ -73,7 +73,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 						</svg>
 					</button>
 					<label class="quiz-question__label">
-							<input class="quiz-question__checkbox-real" type="checkbox" name="contacts""
+							<input class="quiz-question__checkbox-real" type="checkbox" name={"contacts"}"
 		data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">

@@ -2,7 +2,7 @@ const quizData = [
 	{
 		number: 1,
 		title: 'Тип объекта',
-		answer_alias: 'type',
+		answer_alias: 'Тип объекта',
 		answers: [
 			{
 				answer_title: 'Квартира',
@@ -21,7 +21,7 @@ const quizData = [
 	{
 		number: 2,
 		title: 'Укажите площадь объекта',
-		answer_alias: 'square',
+		answer_alias: 'Площадь объекта',
 		answers: [
 			{
 				answer_title: '',
@@ -32,7 +32,7 @@ const quizData = [
 	{
 		number: 3,
 		title: 'Какие услуги вам нужны?',
-		answer_alias: 'services',
+		answer_alias: 'Нужные услуги',
 		answers: [
 			{
 				answer_title: 'Отделка',
@@ -51,7 +51,7 @@ const quizData = [
 	{
 		number: 4,
 		title: 'Когда вы планируете начать реализацию вашего проекта?',
-		answer_alias: 'date',
+		answer_alias: 'Дата начала реализации проекта',
 		answers: [
 			{
 				answer_title: 'До 1 месяца',
@@ -70,7 +70,7 @@ const quizData = [
 	{
 		number: 5,
 		title: 'Оставьте ваши контакты',
-		answer_alias: 'contacts',
+		answer_alias: 'Имя и телефон',
 		answers: [
 			{
 				answer_title: '',

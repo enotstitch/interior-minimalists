@@ -53,7 +53,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 		}
 	});
 
-	if (data.answer_alias === 'contacts') {
+	if (data.answer_alias === 'Имя и телефон') {
 		return `
 		<div class="quiz__content">
 			<div class="quiz__header quiz-header quiz-header--margin">
@@ -73,7 +73,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 						</svg>
 					</button>
 					<label class="quiz-question__label">
-							<input class="quiz-question__checkbox-real" type="checkbox" name="contacts""
+							<input class="quiz-question__checkbox-real" type="checkbox" name={"contacts"}"
 		data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">
@@ -245,23 +245,21 @@ class Quiz {
 	}
 
 	send() {
-		if (this.valid()) {
-			let elements = this.$el.querySelectorAll('input');
-			elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
+		let elements = this.$el.querySelectorAll('input');
+		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-			const formData = new FormData();
+		const formData = new FormData();
 
-			for (let item of this.resultArray) {
-				for (let obj in item) {
-					formData.append(obj, item[obj].substring(0, item[obj].length - 1));
-				}
+		for (let item of this.resultArray) {
+			for (let obj in item) {
+				formData.append(obj, item[obj].substring(0, item[obj].length - 1));
 			}
-
-			const response = fetch('mail.php', {
-				method: 'POST',
-				body: formData,
-			});
 		}
+
+		const response = fetch('mail.php', {
+			method: 'POST',
+			body: formData,
+		});
 	}
 
 	serialize(form) {

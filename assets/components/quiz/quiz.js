@@ -73,7 +73,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 						</svg>
 					</button>
 					<label class="quiz-question__label">
-							<input class="quiz-question__checkbox-real" type="checkbox" name={"contacts"}"
+							<input class="quiz-question__checkbox-real" type="checkbox"
 		data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
 						<p class="quiz-question__policy">
@@ -246,20 +246,47 @@ class Quiz {
 
 	send() {
 		let elements = this.$el.querySelectorAll('input');
+		let isValid = true;
 		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-		const formData = new FormData();
+		elements.forEach((el) => {
+			switch (el.type) {
+				case 'text':
+					if (!el.value) isValid = false;
 
-		for (let item of this.resultArray) {
-			for (let obj in item) {
-				formData.append(obj, item[obj].substring(0, item[obj].length - 1));
+					break;
+
+				case 'tel':
+					if (!el.value) isValid = false;
+
+					break;
+
+				case 'checkbox':
+					if (!el.checked) isValid = false;
+
+					break;
+
+				default:
 			}
-		}
-
-		const response = fetch('mail.php', {
-			method: 'POST',
-			body: formData,
 		});
+
+		console.log(isValid);
+		if (isValid) {
+			const formData = new FormData();
+
+			for (let item of this.resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj].substring(0, item[obj].length - 1));
+				}
+			}
+
+			const response = fetch('mail.php', {
+				method: 'POST',
+				body: formData,
+			});
+
+			this.$el.reset();
+		}
 	}
 
 	serialize(form) {

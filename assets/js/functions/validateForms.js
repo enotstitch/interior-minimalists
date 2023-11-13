@@ -63,23 +63,20 @@ validationModal
 	.addField('.contacts-info__submit', buttonRules)
 	.addField('.politikal', politikalRules)
 	.onSuccess((event) => {
-		let formData = new FormData(event.target);
+		const target = event.target;
+		const modal = target.closest('.modal');
+		let formData = new FormData(target);
 
 		let xhr = new XMLHttpRequest();
-
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				if (xhr.status === 200) {
-				}
-			}
-		};
 
 		xhr.open('POST', 'mail.php', true);
 		xhr.send(formData);
 
+		modal.classList.remove('open');
+
 		modalSend.classList.add('open');
 
-		event.target.reset();
+		target.reset();
 
 		const selectes = document.querySelectorAll('.select__current');
 		selectes.forEach((select) => {
@@ -95,23 +92,25 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			const modal = target.closest('.modal');
+			let formData = new FormData(target);
 
 			let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-					}
-				}
-			};
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
+			modal.classList.remove('open');
+
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
+
+			const selectes = document.querySelectorAll('.select__current');
+			selectes.forEach((select) => {
+				select.setAttribute('size', select.placeholder.length);
+			});
 		});
 } catch {}
 
@@ -124,23 +123,25 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			const modal = target.closest('.modal');
+			let formData = new FormData(target);
 
 			let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-					}
-				}
-			};
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
+			modal.classList.remove('open');
+
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
+
+			const selectes = document.querySelectorAll('.select__current');
+			selectes.forEach((select) => {
+				select.setAttribute('size', select.placeholder.length);
+			});
 		});
 } catch {}
 
@@ -153,23 +154,25 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			const modal = target.closest('.modal');
+			let formData = new FormData(target);
 
 			let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-					}
-				}
-			};
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
+			modal.classList.remove('open');
+
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
+
+			const selectes = document.querySelectorAll('.select__current');
+			selectes.forEach((select) => {
+				select.setAttribute('size', select.placeholder.length);
+			});
 		});
 } catch {}
 
@@ -182,23 +185,25 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			const modal = target.closest('.modal');
+			let formData = new FormData(target);
 
 			let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-					}
-				}
-			};
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
+			modal.classList.remove('open');
+
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
+
+			const selectes = document.querySelectorAll('.select__current');
+			selectes.forEach((select) => {
+				select.setAttribute('size', select.placeholder.length);
+			});
 		});
 } catch {}
 

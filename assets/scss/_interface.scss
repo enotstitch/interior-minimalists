@@ -140,15 +140,15 @@
 		opacity: 0.5;
 	}
 
-	&[disabled] {
-		opacity: 0.4;
-		cursor: not-allowed;
-	}
-
-	&--active {
+	&:active {
 		.link__svg {
 			background-image: url('@img/icons/sprite.svg#loading-circle');
 		}
+	}
+
+	&[disabled] {
+		opacity: 0.4;
+		cursor: not-allowed;
 	}
 
 	@media (max-width: 768px) {
@@ -671,10 +671,14 @@
 	}
 
 	&__current {
-		flex-basis: min-content;
+		flex-basis: fit-content;
 		border: none;
 		padding: 0;
 		cursor: pointer;
+
+		@media (max-width: 992px) {
+			flex-basis: 100%;
+		}
 	}
 
 	&__arrow {
@@ -736,10 +740,6 @@
 
 	&.is-active .select__arrow {
 		transform: rotate(180deg);
-	}
-
-	@media (max-width: 992px) {
-		display: none;
 	}
 }
 

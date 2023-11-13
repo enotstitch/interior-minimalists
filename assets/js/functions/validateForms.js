@@ -21,7 +21,7 @@ const telRules = [
 			const phone = telElem.inputmask.unmaskedvalue();
 			return phone.length === 10;
 		},
-		errorMessage: 'Введите корректный телефон',
+		errorMessage: 'Некорректные данные ввода',
 	},
 ];
 

@@ -742,3 +742,9 @@
 		display: none;
 	}
 }
+
+.just-validate-error-label {
+	padding-top: 8px;
+	font-size: 12px;
+	color: var(error-color);
+}

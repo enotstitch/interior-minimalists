@@ -153,6 +153,17 @@ class Quiz {
 				this.tmp = this.serialize(this.$el);
 			}
 		});
+
+		this.$el.addEventListener('input', (e) => {
+			const target = e.target;
+			if (target.name === 'Тип объекта' && target.type === 'text') {
+				const radio = target
+					.closest('.quiz-question__label')
+					.querySelector('.quiz-question__radio-real');
+
+				radio.checked = true;
+			}
+		});
 	}
 
 	nextQuestion() {
@@ -192,22 +203,7 @@ class Quiz {
 	valid() {
 		let isValid = false;
 		let elements = this.$el.querySelectorAll('input');
-		const currentQuestion = quizData[this.counter];
 		elements.forEach((el) => {
-			if (currentQuestion.answer_alias === 'type') {
-				if (el.type === 'text') {
-					const radio = el
-						.closest('.quiz-question__label')
-						.querySelector('.quiz-question__radio-real');
-					if (radio.checked && el.value) {
-						isValid = true;
-						return isValid;
-					} else if ((radio.checked && !el.value) || (!radio.checked && el.value)) {
-						isValid = false;
-						return isValid;
-					}
-				}
-			}
 			switch (el.type) {
 				case 'text':
 					el.value
@@ -277,22 +273,16 @@ class Quiz {
 				for (let obj in item) {
 					formData.append(obj, item[obj].substring(0, item[obj].length - 2));
 				}
-
-				for (let item of this.resultArray) {
-					for (let obj in item) {
-						formData.append(obj, item[obj].substring(0, item[obj].length - 1));
-					}
-				}
-
-				const response = fetch('mail.php', {
-					method: 'POST',
-					body: formData,
-				});
-
-				modalSend.classList.add('open');
-
-				this.$el.reset();
 			}
+
+			const response = fetch('mail.php', {
+				method: 'POST',
+				body: formData,
+			});
+
+			modalSend.classList.add('open');
+
+			this.$el.reset();
 		}
 	}
 

@@ -149,6 +149,7 @@
 	}
 
 	&__btn {
+		position: relative;
 		display: block;
 		padding-right: 30px;
 		line-height: 125%;
@@ -159,10 +160,14 @@
 		background-size: 13px;
 		background-repeat: no-repeat;
 
-		span {
-			position: relative;
-			z-index: -1;
-			border-bottom: 1px solid currentcolor;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: calc(100% - 30px);
+			height: 1px;
+			background-color: currentcolor;
 		}
 
 		&--margin {
@@ -175,6 +180,11 @@
 			color: var(--light-gray-color);
 			background-image: url('@img/icons/sprite.svg#arrow-back');
 			background-position: left 0 top 50%;
+
+			&::after {
+				left: unset;
+				right: 0;
+			}
 		}
 	}
 

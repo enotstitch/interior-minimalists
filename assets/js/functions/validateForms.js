@@ -101,8 +101,6 @@ try {
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
-			modal.classList.remove('open');
-
 			modalSend.classList.add('open');
 
 			target.reset();
@@ -131,8 +129,6 @@ try {
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
-
-			modal.classList.remove('open');
 
 			modalSend.classList.add('open');
 
@@ -163,8 +159,6 @@ try {
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
-			modal.classList.remove('open');
-
 			modalSend.classList.add('open');
 
 			target.reset();
@@ -193,8 +187,6 @@ try {
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
-
-			modal.classList.remove('open');
 
 			modalSend.classList.add('open');
 

@@ -68,9 +68,8 @@ const quizTemplate = (data = [], dataLength, options) => {
 					${answers.join('')}
 					<button type="button" class="quiz-question__send link btn-reset" data-send>
 						<span class="link__text">${sendBtnText}</span>
-						<svg class="link__svg">
-							<use href="img/icons/sprite.svg#arrow"></use>
-						</svg>
+						<div class="link__svg">
+						</div>
 					</button>
 					<label class="quiz-question__label">
 							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">

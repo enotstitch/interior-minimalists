@@ -140,12 +140,6 @@
 		opacity: 0.5;
 	}
 
-	&:active {
-		.link__svg {
-			background-image: url('@img/icons/sprite.svg#loading-circle');
-		}
-	}
-
 	&[disabled] {
 		opacity: 0.4;
 		cursor: not-allowed;

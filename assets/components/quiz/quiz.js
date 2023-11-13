@@ -32,8 +32,8 @@ const quizTemplate = (data = [], dataLength, options) => {
 			return `
 			<label class="quiz-question__label">
 				<input class="quiz-question__checkbox-real" type="checkbox" name="${data.answer_alias}" value="${item.answer_title}" data-valid="false">
-				<span class="quiz-question__checkbox-fake"></span>
-				${item.answer_title}
+				<div class="quiz-question__checkbox-fake"></div>
+				<span>${item.answer_title}</span>
 			</label>
 			`;
 		} else if (item.type === 'name') {
@@ -75,10 +75,10 @@ const quizTemplate = (data = [], dataLength, options) => {
 					<label class="quiz-question__label">
 							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
-						<span class="quiz-question__policy">
+						<p class="quiz-question__policy">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link link-reset" target="_blank" href="politikal.html">Политикой
 								конфиденциальности</a>
-						</span>
+						</p>
 					</label>
 				</div>
 			</div>
@@ -99,7 +99,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 				</div>
 				<div class="quiz-question__btns">
 				<button type="button" class="quiz-question__btn quiz-question__btn--margin btn-reset" data-next-btn>
-					${nextBtnText}
+					<span>${nextBtnText}</span>
 				</button>
 				</div>
 			</div>
@@ -175,8 +175,8 @@ class Quiz {
 				if (this.counter !== 0 && this.counter + 1 !== this.dataLength) {
 					const nextBtn = this.$el.querySelector('.quiz-question__btn');
 					nextBtn.outerHTML = `
-		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn>${this.options.prevBtnText}</button>
-		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn="">${this.options.nextBtnText}</button>
+		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
+		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
 		      `;
 				}
 
@@ -194,8 +194,8 @@ class Quiz {
 		if (this.counter !== 0) {
 			const nextBtn = this.$el.querySelector('.quiz-question__btn');
 			nextBtn.outerHTML = `
-          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn>${this.options.prevBtnText}</button>
-          <button type="button" class="quiz-question__btn btn-reset" data-next-btn="">${this.options.nextBtnText}</button>
+          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
+          <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
           `;
 		}
 	}
@@ -239,52 +239,52 @@ class Quiz {
 		this.resultArray.push(this.tmp);
 	}
 
-	send() {
-		const modalSend = document.getElementById('modalSend');
-		let elements = this.$el.querySelectorAll('input');
-		let isValid = true;
-		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
+	  send() {
+    const modalSend = document.getElementById('modalSend');
+    let elements = this.$el.querySelectorAll('input');
+    let isValid = true;
+    elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-		elements.forEach((el) => {
-			switch (el.type) {
-				case 'text':
-					if (!el.value) isValid = false;
+    elements.forEach((el) => {
+      switch (el.type) {
+        case 'text':
+          if (!el.value) isValid = false;
 
-					break;
+          break;
 
-				case 'tel':
-					if (!el.value) isValid = false;
+        case 'tel':
+          if (!el.value) isValid = false;
 
-					break;
+          break;
 
-				case 'checkbox':
-					if (!el.checked) isValid = false;
+        case 'checkbox':
+          if (!el.checked) isValid = false;
 
-					break;
+          break;
 
-				default:
-			}
-		});
+        default:
+      }
+    });
 
-		if (isValid) {
-			const formData = new FormData();
+    if (isValid) {
+      const formData = new FormData();
 
-			for (let item of this.resultArray) {
-				for (let obj in item) {
-					formData.append(obj, item[obj].substring(0, item[obj].length - 2));
-				}
-			}
+      for (let item of this.resultArray) {
+        for (let obj in item) {
+          formData.append(obj, item[obj].substring(0, item[obj].length - 2));
+        }
+      }
 
-			const response = fetch('mail.php', {
-				method: 'POST',
-				body: formData,
-			});
+      const response = fetch('mail.php', {
+        method: 'POST',
+        body: formData,
+      });
 
-			modalSend.classList.add('open');
+      modalSend.classList.add('open');
 
-			this.$el.reset();
-		}
-	}
+      this.$el.reset();
+    }
+  }
 
 	serialize(form) {
 		let field,

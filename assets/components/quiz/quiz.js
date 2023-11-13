@@ -32,7 +32,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 			return `
 			<label class="quiz-question__label">
 				<input class="quiz-question__checkbox-real" type="checkbox" name="${data.answer_alias}" value="${item.answer_title}" data-valid="false">
-				<div class="quiz-question__checkbox-fake"></div>
+				<span class="quiz-question__checkbox-fake"></span>
 				<span>${item.answer_title}</span>
 			</label>
 			`;
@@ -75,10 +75,10 @@ const quizTemplate = (data = [], dataLength, options) => {
 					<label class="quiz-question__label">
 							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">
 	<div class="quiz-question__checkbox-fake"></div>
-						<p class="quiz-question__policy">
+						<span class="quiz-question__policy">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="quiz-question__link link-reset" target="_blank" href="politikal.html">Политикой
 								конфиденциальности</a>
-						</p>
+						</span>
 					</label>
 				</div>
 			</div>
@@ -244,23 +244,56 @@ class Quiz {
 	}
 
 	send() {
+		const modalSend = document.getElementById('modalSend');
 		let elements = this.$el.querySelectorAll('input');
+		let isValid = true;
 		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-		const formData = new FormData();
+		elements.forEach((el) => {
+			switch (el.type) {
+				case 'text':
+					if (!el.value) isValid = false;
 
-		for (let item of this.resultArray) {
-			for (let obj in item) {
-				formData.append(obj, item[obj].substring(0, item[obj].length - 2));
+					break;
+
+				case 'tel':
+					if (!el.value) isValid = false;
+
+					break;
+
+				case 'checkbox':
+					if (!el.checked) isValid = false;
+
+					break;
+
+				default:
 			}
-		}
-
-		const response = fetch('mail.php', {
-			method: 'POST',
-			body: formData,
 		});
 
-		console.log(formData);
+		if (isValid) {
+			const formData = new FormData();
+
+			for (let item of this.resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj].substring(0, item[obj].length - 2));
+				}
+
+				for (let item of this.resultArray) {
+					for (let obj in item) {
+						formData.append(obj, item[obj].substring(0, item[obj].length - 1));
+					}
+				}
+
+				const response = fetch('mail.php', {
+					method: 'POST',
+					body: formData,
+				});
+
+				modalSend.classList.add('open');
+
+				this.$el.reset();
+			}
+		}
 	}
 
 	serialize(form) {

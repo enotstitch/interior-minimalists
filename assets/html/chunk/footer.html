@@ -145,10 +145,10 @@
 					<form class="contacts-info modal-form" autocomplete="off">
 						<div class="contacts-info__labels">
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" name="name" type="text" placeholder="Ваше имя">
+								<input class="contacts-info__input" name="Имя" type="text" placeholder="Ваше имя">
 							</label>
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" name="tel" type="tel">
+								<input class="contacts-info__input" name="Телефон" type="tel" placeholder="+7 (___) ___-__-__">
 							</label>
 
 							<div class="select">
@@ -195,19 +195,17 @@
 
 						<button class="contacts-info__submit link btn-reset" disabled="disabled">
 							<span class="link__text">Отправить результаты</span>
-							<svg class="link__svg">
-								<use href="@img/icons/sprite.svg#arrow"></use>
-							</svg>
+							<span class="link__svg"></span>
 						</button>
 
 						<label class="policy-label checkbox">
 							<input class="checkbox__real politikal" type="checkbox">
-							<div class="checkbox__fake"></div>
-							<p class="policy-label__text">
+							<span class="checkbox__fake"></span>
+							<span class="policy-label__text">
 								Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"
-									href="#/">Политикой
+									href="politikal.html">Политикой
 									конфиденциальности</a>
-							</p>
+							</span>
 						</label>
 					</form>
 				</div>
@@ -219,20 +217,30 @@
 				<div class="modal__content">
 					<a class="modal__close close-modal" href="#header">X</a>
 					<div class="modal__title">Примеры рабочих моментов комплектации</div>
-					<div class="modal__inner">
-						<div class="modal__images">
+					<div class="modal__images">
+						<picture>
+							<source type="image/webp" data-srcset="@img/delegation/delegation-img-1.webp">
+							<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-1.jpg">
+						</picture>
+						<div class="modal__img">
 							<picture>
-								<source type="image/webp" data-srcset="@img/delegation/delegation-img-1.webp">
-								<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-1.jpg">
+								<source type="image/webp" data-srcset="@img/delegation/delegation-img-2.webp">
+								<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-2.jpg">
 							</picture>
-							<div class="modal__img">
-								<picture>
-									<source type="image/webp" data-srcset="@img/delegation/delegation-img-2.webp">
-									<img class="lazyload" alt="Фото интерьера" data-src="@img/delegation/delegation-img-2.jpg">
-								</picture>
-							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal" id="modalSend">
+			<div class="modal__body">
+				<div class="modal__content">
+					<a class="modal__close close-modal" href="#header">X</a>
+					<div class="modal__title modal__title--text-align">Спасибо, мы получили ваш запрос на обратную связь</div>
+					<p class="modal__text modal__text--center text">
+						Если вы заказали звонок, ожидайте его с номера
+					</p>
+					<a class="modal__phone link-reset" href="tel:+79628383900">+7 962 838 39 00</a>
 				</div>
 			</div>
 		</div>

@@ -12,7 +12,7 @@
 					Мы свяжемся с вами в рабочее время: пн.–пт. с 9 до 18
 				</p>
 
-				<form class="form-blog" action="#">
+				<form class="form-blog situation-form" autocomplete="off">
 					<div class="form-blog__questions">
 						<p class="form-blog__title">
 							Ваша ситуация:
@@ -20,44 +20,46 @@
 
 						<div class="form-blog__labels">
 							<label class="label checkbox">
-								<input class="checkbox__real" type="checkbox" value="Дизайн-проект есть, нужна его реализация">
-								<div class="checkbox__fake"></div>
+								<input class="checkbox__real" type="checkbox" name="Ситуация"
+									value="Дизайн-проект есть, нужна его реализация">
+								<span class="checkbox__fake"></span>
 								<span>Дизайн-проект есть, нужна его реализация</span>
 							</label>
 
 							<label class="label checkbox">
-								<input class="checkbox__real" type="checkbox" value="Нужен дизайн-проект интерьера (≈ 1000–2500р/м2)">
-								<div class="checkbox__fake"></div>
+								<input class="checkbox__real" type="checkbox" name="Ситуация"
+									value="Нужен дизайн-проект интерьера (≈ 1000–2500р/м2)">
+								<span class="checkbox__fake"></span>
 								<span>Нужен дизайн-проект интерьера (≈ 1000–2500р/м2)</span>
 							</label>
 
 							<label class="label checkbox">
-								<input class="checkbox__real" type="checkbox"
+								<input class="checkbox__real" type="checkbox" name="Ситуация"
 									value="Полный проект не нужен, нужен минимальный или полный набор технических планов (≈ 600-1500р/м2)">
-								<div class="checkbox__fake"></div>
+								<span class="checkbox__fake"></span>
 								<span>Полный проект не нужен, нужен минимальный или полный набор технических планов (≈
 									600-1500р/м2)</span>
 							</label>
 
 							<label class="label checkbox">
-								<input class="checkbox__real" type="checkbox"
+								<input class="checkbox__real" type="checkbox" name="Ситуация"
 									value="Полный проект не нужен, только стилистическое, цветовое решение, 3D визуализации (от 600р/м2)">
-								<div class="checkbox__fake"></div>
+								<span class="checkbox__fake"></span>
 								<span>Полный проект не нужен, только стилистическое, цветовое решение, 3D визуализации (от
 									600р/м2)</span>
 							</label>
 
 							<label class="label checkbox">
-								<input class="checkbox__real" type="checkbox"
+								<input class="checkbox__real" type="checkbox" name="Ситуация"
 									value="Нужна консультация дизайнера при подготовке и/или в процессе работ (≈ 600–1 000 ₽ за час работы)">
-								<div class="checkbox__fake"></div>
+								<span class="checkbox__fake"></span>
 								<span>Нужна консультация дизайнера при подготовке и/или в процессе работ (≈ 600–1 000 ₽ за час
 									работы)</span>
 							</label>
 
 							<label class="label checkbox">
-								<input class="checkbox__real" type="checkbox" value="Ничего не нужно из перечисленного">
-								<div class="checkbox__fake"></div>
+								<input class="checkbox__real" type="checkbox" name="Ситуация" value="Ничего не нужно из перечисленного">
+								<span class="checkbox__fake"></span>
 								<span>Ничего не нужно из перечисленного</span>
 							</label>
 
@@ -67,28 +69,26 @@
 					<div class="contacts-info">
 						<div class="contacts-info__labels">
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" type="text" placeholder="Ваше имя">
+								<input class="contacts-info__input" name="Имя" type="text" placeholder="Ваше имя">
 							</label>
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" type="tel">
+								<input class="contacts-info__input" name="Телефон" type="tel">
 							</label>
 						</div>
 
-						<button class="contacts-info__submit link btn-reset">
+						<button class="contacts-info__submit link btn-reset" disabled="disabled">
 							<span class="link__text">Отправить результаты</span>
-							<svg class="link__svg">
-								<use href="@img/icons/sprite.svg#arrow"></use>
-							</svg>
+							<span class="link__svg"></span>
 						</button>
 
 						<label class="policy-label checkbox">
-							<input class="checkbox__real" type="checkbox" name="contacts">
-							<div class="checkbox__fake"></div>
-							<p class="policy-label__text">
+							<input class="checkbox__real politikal" type="checkbox">
+							<span class="checkbox__fake"></span>
+							<span class="policy-label__text">
 								Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"
-									href="#/">Политикой
+									href="politikal.html">Политикой
 									конфиденциальности</a>
-							</p>
+								</span>
 						</label>
 					</div>
 				</form>

@@ -1,5 +1,7 @@
 import JustValidate from '../libs/just-validate.min';
 
+const modalSend = document.getElementById('modalSend');
+
 const formInputMask = () => {
 	let inputsPhone = document.querySelectorAll('input[type="tel"]');
 	let im = new Inputmask('+7 (999) 999-99-99');
@@ -68,13 +70,14 @@ validationModal
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
-					console.log('Отправлено');
 				}
 			}
 		};
 
 		xhr.open('POST', 'mail.php', true);
 		xhr.send(formData);
+
+		modalSend.classList.add('open');
 
 		event.target.reset();
 
@@ -83,6 +86,121 @@ validationModal
 			select.setAttribute('size', select.placeholder.length);
 		});
 	});
+
+try {
+	const situationModal = new JustValidate('.situation-form');
+	situationModal
+		.addRequiredGroup('.form-blog__labels', 'Выберите как минимум один вариант')
+		.addField('input[type="tel"]', telRules)
+		.addField('.contacts-info__submit', buttonRules)
+		.addField('.politikal', politikalRules)
+		.onSuccess((event) => {
+			let formData = new FormData(event.target);
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+					}
+				}
+			};
+
+			xhr.open('POST', 'mail.php', true);
+			xhr.send(formData);
+
+			modalSend.classList.add('open');
+
+			event.target.reset();
+		});
+} catch {}
+
+try {
+	const delegationModal = new JustValidate('.delegation-form');
+
+	delegationModal
+		.addRequiredGroup('.form-blog__labels', 'Выберите один вариант')
+		.addField('input[type="tel"]', telRules)
+		.addField('.contacts-info__submit', buttonRules)
+		.addField('.politikal', politikalRules)
+		.onSuccess((event) => {
+			let formData = new FormData(event.target);
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+					}
+				}
+			};
+
+			xhr.open('POST', 'mail.php', true);
+			xhr.send(formData);
+
+			modalSend.classList.add('open');
+
+			event.target.reset();
+		});
+} catch {}
+
+try {
+	const facilitiesModal = new JustValidate('.facilities-form');
+
+	facilitiesModal
+		.addRequiredGroup('.form-blog__labels', 'Выберите один вариант')
+		.addField('input[type="tel"]', telRules)
+		.addField('.contacts-info__submit', buttonRules)
+		.addField('.politikal', politikalRules)
+		.onSuccess((event) => {
+			let formData = new FormData(event.target);
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+					}
+				}
+			};
+
+			xhr.open('POST', 'mail.php', true);
+			xhr.send(formData);
+
+			modalSend.classList.add('open');
+
+			event.target.reset();
+		});
+} catch {}
+
+try {
+	const quoteSavingModal = new JustValidate('.quote-saving-form');
+
+	quoteSavingModal
+		.addRequiredGroup('.form-blog__labels', 'Выберите один вариант')
+		.addField('input[type="tel"]', telRules)
+		.addField('.contacts-info__submit', buttonRules)
+		.addField('.politikal', politikalRules)
+		.onSuccess((event) => {
+			let formData = new FormData(event.target);
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+					}
+				}
+			};
+
+			xhr.open('POST', 'mail.php', true);
+			xhr.send(formData);
+
+			modalSend.classList.add('open');
+
+			event.target.reset();
+		});
+} catch {}
 
 try {
 	formInputMask();

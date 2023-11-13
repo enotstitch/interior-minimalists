@@ -36,6 +36,16 @@
 		}
 	}
 
+	&__title {
+		margin-bottom: 20px;
+		font-weight: 500;
+		text-transform: uppercase;
+
+		&--text-align {
+			text-align: center;
+		}
+	}
+
 	&__images {
 		display: flex;
 		flex-direction: column;
@@ -51,14 +61,22 @@
 		color: var(--dark-coloe);
 	}
 
-	&__title {
-		margin-bottom: 20px;
-		font-weight: 500;
-		text-transform: uppercase;
-	}
-
 	&__text {
 		margin-bottom: 35px;
+
+		&--center {
+			margin: 0 auto;
+			margin-bottom: 35px;
+			max-width: 205px;
+			text-align: center;
+		}
+	}
+
+	&__phone {
+		display: block;
+		margin: 0 auto;
+		width: fit-content;
+		font-weight: 500;
 	}
 
 	&.open {

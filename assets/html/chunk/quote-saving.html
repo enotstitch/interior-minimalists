@@ -32,7 +32,7 @@
 				</div>
 			</div>
 
-			<form class="form-blog" action="#">
+			<form class="form-blog quote-saving-form" autocomplete="off">
 				<div class="form-blog__questions">
 					<p class="form-blog__title">
 						На какие категории товаров вам было бы интересно получить специальное предложение?
@@ -40,44 +40,48 @@
 
 					<div class="form-blog__labels">
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Климатические системы и кондиционеры">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров"
+								value="Климатические системы и кондиционеры">
+							<span class="checkbox__fake"></span>
 							<span>Климатические системы и кондиционеры</span>
 						</label>
 
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Керамическая плитка, керамогранит">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров"
+								value="Керамическая плитка, керамогранит">
+							<span class="checkbox__fake"></span>
 							<span>Керамическая плитка, керамогранит</span>
 						</label>
 
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Двери межкомнатные">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров" value="Двери межкомнатные">
+							<span class="checkbox__fake"></span>
 							<span>Двери межкомнатные</span>
 						</label>
 
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Напольные покрытия (паркет, ламинат, ПВХ плитка)">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров"
+								value="Напольные покрытия (паркет, ламинат, ПВХ плитка)">
+							<span class="checkbox__fake"></span>
 							<span>Напольные покрытия (паркет, ламинат, ПВХ плитка)</span>
 						</label>
 
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Натяжные ПВХ потолки">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров" value="Натяжные ПВХ потолки">
+							<span class="checkbox__fake"></span>
 							<span>Натяжные ПВХ потолки</span>
 						</label>
 
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Натяжные тканевые потолки">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров" value="Натяжные тканевые потолки">
+							<span class="checkbox__fake"></span>
 							<span>Натяжные тканевые потолки</span>
 						</label>
 
 						<label class="label checkbox">
-							<input class="checkbox__real" type="checkbox" value="Декоративная штукатурка стен">
-							<div class="checkbox__fake"></div>
+							<input class="checkbox__real" type="checkbox" name="Категории товаров"
+								value="Декоративная штукатурка стен">
+							<span class="checkbox__fake"></span>
 							<span>Декоративная штукатурка стен</span>
 						</label>
 
@@ -87,28 +91,26 @@
 				<div class="contacts-info">
 					<div class="contacts-info__labels">
 						<label class="contacts-info__label">
-							<input class="contacts-info__input" type="text" placeholder="Ваше имя">
+							<input class="contacts-info__input" name="Имя" type="text" placeholder="Ваше имя">
 						</label>
 						<label class="contacts-info__label">
-							<input class="contacts-info__input" type="text">
+							<input class="contacts-info__input" name="Телефон" type="tel">
 						</label>
 					</div>
 
-					<button class="contacts-info__submit link btn-reset">
+					<button class="contacts-info__submit link btn-reset" disabled="disabled">
 						<span class="link__text">Отправить результаты</span>
-						<svg class="link__svg">
-							<use href="@img/icons/sprite.svg#arrow"></use>
-						</svg>
+						<span class="link__svg"></span>
 					</button>
 
 					<label class="policy-label checkbox">
-						<input class="checkbox__real" type="checkbox" name="contacts">
-						<div class="checkbox__fake"></div>
-						<p class="policy-label__text">
+						<input class="checkbox__real politikal" type="checkbox">
+						<span class="checkbox__fake"></span>
+						<span class="policy-label__text">
 							Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"
 								href="#/">Политикой
 								конфиденциальности</a>
-						</p>
+						</span>
 					</label>
 				</div>
 			</form>

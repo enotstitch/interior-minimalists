@@ -66,7 +66,7 @@
 					Это только небольшая часть функций комплектации, и если ваше время стоит дороже 5-8% запланированных трат, то
 					рациональнее будет нанять комплектатора.
 				</p>
-				<a class="table__link more link-reset modal-link" href="#modalPhoto">
+				<a class="more link-reset modal-link" href="#modalPhoto">
 					<span class="more__text">Примеры рабочих моментов
 						комплектации
 					</span>
@@ -74,29 +74,31 @@
 			</div>
 
 			<div class="delegation__form">
-				<form class="form-blog" action="#">
+				<form class="form-blog delegation-form" autocomplete="off">
 					<div class="form-blog__questions">
 						<p class="form-blog__title">
-							Ваша ситуация:
+							Кто будет комплектовать ваш интерьер?
 						</p>
 
 						<div class="form-blog__labels">
 							<label class="label radio">
-								<input class="radio__real" type="radio" name="equipment" value="Потребуются ваши услуги комплектатора">
-								<div class="radio__fake"></div>
+								<input class="radio__real" type="radio" name="Кто будет комплектовать"
+									value="Потребуются ваши услуги комплектатора">
+								<span class="radio__fake"></span>
 								<span>Потребуются ваши услуги комплектатора</span>
 							</label>
 
 							<label class="label radio">
-								<input class="radio__real" type="radio" name="equipment"
+								<input class="radio__real" type="radio" name="Кто будет комплектовать"
 									value="Самостоятельно, есть ведомость материалов">
-								<div class="radio__fake"></div>
+								<span class="radio__fake"></span>
 								<span>Самостоятельно, есть ведомость материалов</span>
 							</label>
 
 							<label class="label radio">
-								<input class="radio__real" type="radio" name="equipment" value="Есть дизайнер, который все подберет">
-								<div class="radio__fake"></div>
+								<input class="radio__real" type="radio" name="Кто будет комплектовать"
+									value="Есть дизайнер, который все подберет">
+								<span class="radio__fake"></span>
 								<span>Есть дизайнер, который все подберет</span>
 							</label>
 
@@ -106,30 +108,29 @@
 					<div class="contacts-info">
 						<div class="contacts-info__labels">
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" type="text" placeholder="Ваше имя">
+								<input class="contacts-info__input" name="Имя" type="text" placeholder="Ваше имя">
 							</label>
 							<label class="contacts-info__label">
-								<input class="contacts-info__input" type="text">
+								<input class="contacts-info__input" name="Телефон" type="tel">
 							</label>
 						</div>
 
-						<button class="contacts-info__submit link btn-reset">
+						<button class="contacts-info__submit link btn-reset" disabled="disabled">
 							<span class="link__text">Отправить результаты</span>
-							<svg class="link__svg">
-								<use href="@img/icons/sprite.svg#arrow"></use>
-							</svg>
+							<span class="link__svg"></span>
 						</button>
 
 						<label class="policy-label checkbox">
-							<input class="checkbox__real" type="radio" name="contacts">
-							<div class="checkbox__fake"></div>
-							<p class="policy-label__text">
+							<input class="checkbox__real politikal" type="checkbox">
+							<span class="checkbox__fake"></span>
+							<span class="policy-label__text">
 								Согласен(на) на обработку персональных данных в соответствии с <a class="policy-label__link link-reset"
-									target="_blank" href="politikal.html">Политикой
+									href="politikal.html">Политикой
 									конфиденциальности</a>
-							</p>
+							</span>
 						</label>
 					</div>
+
 				</form>
 			</div>
 

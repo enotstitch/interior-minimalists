@@ -153,6 +153,17 @@ class Quiz {
 				this.tmp = this.serialize(this.$el);
 			}
 		});
+
+		this.$el.addEventListener('input', (e) => {
+			const target = e.target;
+			if (target.name === 'Тип объекта' && target.type === 'text') {
+				const radio = target
+					.closest('.quiz-question__label')
+					.querySelector('.quiz-question__radio-real');
+
+				radio.checked = true;
+			}
+		});
 	}
 
 	nextQuestion() {
@@ -192,22 +203,7 @@ class Quiz {
 	valid() {
 		let isValid = false;
 		let elements = this.$el.querySelectorAll('input');
-		const currentQuestion = quizData[this.counter];
 		elements.forEach((el) => {
-			if (currentQuestion.answer_alias === 'type') {
-				if (el.type === 'text') {
-					const radio = el
-						.closest('.quiz-question__label')
-						.querySelector('.quiz-question__radio-real');
-					if (radio.checked && el.value) {
-						isValid = true;
-						return isValid;
-					} else if ((radio.checked && !el.value) || (!radio.checked && el.value)) {
-						isValid = false;
-						return isValid;
-					}
-				}
-			}
 			switch (el.type) {
 				case 'text':
 					el.value
@@ -243,25 +239,52 @@ class Quiz {
 		this.resultArray.push(this.tmp);
 	}
 
-	send() {
-		let elements = this.$el.querySelectorAll('input');
-		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
+	  send() {
+    const modalSend = document.getElementById('modalSend');
+    let elements = this.$el.querySelectorAll('input');
+    let isValid = true;
+    elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-		const formData = new FormData();
+    elements.forEach((el) => {
+      switch (el.type) {
+        case 'text':
+          if (!el.value) isValid = false;
 
-		for (let item of this.resultArray) {
-			for (let obj in item) {
-				formData.append(obj, item[obj].substring(0, item[obj].length - 2));
-			}
-		}
+          break;
 
-		const response = fetch('mail.php', {
-			method: 'POST',
-			body: formData,
-		});
+        case 'tel':
+          if (!el.value) isValid = false;
 
-		console.log(formData);
-	}
+          break;
+
+        case 'checkbox':
+          if (!el.checked) isValid = false;
+
+          break;
+
+        default:
+      }
+    });
+
+    if (isValid) {
+      const formData = new FormData();
+
+      for (let item of this.resultArray) {
+        for (let obj in item) {
+          formData.append(obj, item[obj].substring(0, item[obj].length - 2));
+        }
+      }
+
+      const response = fetch('mail.php', {
+        method: 'POST',
+        body: formData,
+      });
+
+      modalSend.classList.add('open');
+
+      this.$el.reset();
+    }
+  }
 
 	serialize(form) {
 		let field,

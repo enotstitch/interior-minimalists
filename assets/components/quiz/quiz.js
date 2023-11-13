@@ -33,7 +33,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 			<label class="quiz-question__label">
 				<input class="quiz-question__checkbox-real" type="checkbox" name="${data.answer_alias}" value="${item.answer_title}" data-valid="false">
 				<span class="quiz-question__checkbox-fake"></span>
-				<span>${item.answer_title}</span>
+				${item.answer_title}
 			</label>
 			`;
 		} else if (item.type === 'name') {
@@ -99,7 +99,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 				</div>
 				<div class="quiz-question__btns">
 				<button type="button" class="quiz-question__btn quiz-question__btn--margin btn-reset" data-next-btn>
-					<span>${nextBtnText}</span>
+					${nextBtnText}
 				</button>
 				</div>
 			</div>
@@ -164,8 +164,8 @@ class Quiz {
 				if (this.counter !== 0 && this.counter + 1 !== this.dataLength) {
 					const nextBtn = this.$el.querySelector('.quiz-question__btn');
 					nextBtn.outerHTML = `
-		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
-		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
+		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn>${this.options.prevBtnText}</button>
+		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn="">${this.options.nextBtnText}</button>
 		      `;
 				}
 
@@ -183,8 +183,8 @@ class Quiz {
 		if (this.counter !== 0) {
 			const nextBtn = this.$el.querySelector('.quiz-question__btn');
 			nextBtn.outerHTML = `
-          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
-          <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
+          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn>${this.options.prevBtnText}</button>
+          <button type="button" class="quiz-question__btn btn-reset" data-next-btn="">${this.options.nextBtnText}</button>
           `;
 		}
 	}

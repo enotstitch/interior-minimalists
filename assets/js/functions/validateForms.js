@@ -93,8 +93,35 @@ try {
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
 			const target = event.target;
-			const modal = target.closest('.modal');
-			let formData = new FormData(target);
+			let formData = new FormData();
+
+			let valueString = '';
+			let len = target.elements.length;
+			let resultArray = [];
+			let checkbox = {};
+
+			for (let i = 0; i < len; i++) {
+				let s = {};
+				let field = target.elements[i];
+				if (field.name !== '') {
+					if (field.type === 'checkbox' && field.checked) {
+						valueString += field.value + `<br>`;
+						checkbox[field.name] = valueString;
+					} else if (field.type !== 'checkbox') {
+						valueString = field.value;
+						s[field.name] = valueString;
+						resultArray.push(s);
+					}
+				}
+			}
+
+			resultArray.push(checkbox);
+
+			for (let item of resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj]);
+				}
+			}
 
 			let xhr = new XMLHttpRequest();
 
@@ -104,11 +131,6 @@ try {
 			modalSend.classList.add('open');
 
 			target.reset();
-
-			const selectes = document.querySelectorAll('.select__current');
-			selectes.forEach((select) => {
-				select.setAttribute('size', select.placeholder.length);
-			});
 		});
 } catch {}
 
@@ -180,8 +202,35 @@ try {
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
 			const target = event.target;
-			const modal = target.closest('.modal');
-			let formData = new FormData(target);
+			let formData = new FormData();
+
+			let valueString = '';
+			let len = target.elements.length;
+			let resultArray = [];
+			let checkbox = {};
+
+			for (let i = 0; i < len; i++) {
+				let s = {};
+				let field = target.elements[i];
+				if (field.name !== '') {
+					if (field.type === 'checkbox' && field.checked) {
+						valueString += field.value + `<br>`;
+						checkbox[field.name] = valueString;
+					} else if (field.type !== 'checkbox') {
+						valueString = field.value;
+						s[field.name] = valueString;
+						resultArray.push(s);
+					}
+				}
+			}
+
+			resultArray.push(checkbox);
+
+			for (let item of resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj]);
+				}
+			}
 
 			let xhr = new XMLHttpRequest();
 
@@ -191,11 +240,6 @@ try {
 			modalSend.classList.add('open');
 
 			target.reset();
-
-			const selectes = document.querySelectorAll('.select__current');
-			selectes.forEach((select) => {
-				select.setAttribute('size', select.placeholder.length);
-			});
 		});
 } catch {}
 

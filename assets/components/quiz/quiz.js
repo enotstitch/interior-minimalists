@@ -67,9 +67,9 @@ const quizTemplate = (data = [], dataLength, options) => {
 				<div class="quiz-question__answers quiz-question__answers--margin">
 					${answers.join('')}
 					<button type="button" class="quiz-question__send link btn-reset" data-send>
-						<span class="link__text">${sendBtnText}</span>
-						<div class="link__svg">
-						</div>
+						${sendBtnText}
+						<span class="link__svg">
+						</span>
 					</button>
 					<label class="quiz-question__label">
 							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">
@@ -278,6 +278,8 @@ class Quiz {
 				method: 'POST',
 				body: formData,
 			});
+
+			console.log('отправлено!');
 
 			modalSend.classList.add('open');
 

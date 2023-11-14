@@ -511,16 +511,27 @@
 		border: 2px solid var(--gray-color);
 		width: 16px;
 		height: 16px;
-		background-image: url('@img/icons/sprite.svg#check-mark');
-		background-position: center;
-		background-size: 0;
-		background-repeat: no-repeat;
-		transition: background-size 0.2s;
 		cursor: pointer;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 16px;
+			height: 16px;
+			background-image: url('@img/icons/sprite.svg#check-mark');
+			background-position: center;
+			background-size: 11px;
+			background-repeat: no-repeat;
+			opacity: 0;
+			transform: translate(-50%, -50%);
+			transition: opacity 0.2s ease-in;
+		}
 	}
 
-	&__real:checked ~ &__fake {
-		background-size: 11px;
+	&__real:checked ~ &__fake::before {
+		opacity: 1;
 	}
 }
 

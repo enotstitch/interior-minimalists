@@ -46,7 +46,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 		} else if (item.type === 'tel') {
 			return `
 			<label class="quiz-question__label">
-					<input class="quiz-question__answer" type="tel" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}">
+					<input class="quiz-question__answer" type="tel" data-valid="false" name="${data.answer_alias}" value="${item.answer_title}" placeholder="+7 (___) ___-__-__">
 					<span>${item.answer_title}</span>
 			</label>
 			`;

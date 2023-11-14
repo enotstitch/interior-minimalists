@@ -63,23 +63,20 @@ validationModal
 	.addField('.contacts-info__submit', buttonRules)
 	.addField('.politikal', politikalRules)
 	.onSuccess((event) => {
-		let formData = new FormData(event.target);
+		const target = event.target;
+		const modal = target.closest('.modal');
+		let formData = new FormData(target);
 
 		let xhr = new XMLHttpRequest();
-
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				if (xhr.status === 200) {
-				}
-			}
-		};
 
 		xhr.open('POST', 'mail.php', true);
 		xhr.send(formData);
 
+		modal.classList.remove('open');
+
 		modalSend.classList.add('open');
 
-		event.target.reset();
+		target.reset();
 
 		const selectes = document.querySelectorAll('.select__current');
 		selectes.forEach((select) => {
@@ -95,23 +92,45 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			let formData = new FormData();
 
-			let xhr = new XMLHttpRequest();
+			let valueString = '';
+			let len = target.elements.length;
+			let resultArray = [];
+			let checkbox = {};
 
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
+			for (let i = 0; i < len; i++) {
+				let s = {};
+				let field = target.elements[i];
+				if (field.name !== '') {
+					if (field.type === 'checkbox' && field.checked) {
+						valueString += field.value + `<br>`;
+						checkbox[field.name] = valueString;
+					} else if (field.type !== 'checkbox') {
+						valueString = field.value;
+						s[field.name] = valueString;
+						resultArray.push(s);
 					}
 				}
-			};
+			}
+
+			resultArray.push(checkbox);
+
+			for (let item of resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj]);
+				}
+			}
+
+			let xhr = new XMLHttpRequest();
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
 		});
 } catch {}
 
@@ -124,23 +143,23 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			const modal = target.closest('.modal');
+			let formData = new FormData(target);
 
 			let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-					}
-				}
-			};
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
+
+			const selectes = document.querySelectorAll('.select__current');
+			selectes.forEach((select) => {
+				select.setAttribute('size', select.placeholder.length);
+			});
 		});
 } catch {}
 
@@ -153,23 +172,23 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			const modal = target.closest('.modal');
+			let formData = new FormData(target);
 
 			let xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-					}
-				}
-			};
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
+
+			const selectes = document.querySelectorAll('.select__current');
+			selectes.forEach((select) => {
+				select.setAttribute('size', select.placeholder.length);
+			});
 		});
 } catch {}
 
@@ -182,23 +201,45 @@ try {
 		.addField('.contacts-info__submit', buttonRules)
 		.addField('.politikal', politikalRules)
 		.onSuccess((event) => {
-			let formData = new FormData(event.target);
+			const target = event.target;
+			let formData = new FormData();
 
-			let xhr = new XMLHttpRequest();
+			let valueString = '';
+			let len = target.elements.length;
+			let resultArray = [];
+			let checkbox = {};
 
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
+			for (let i = 0; i < len; i++) {
+				let s = {};
+				let field = target.elements[i];
+				if (field.name !== '') {
+					if (field.type === 'checkbox' && field.checked) {
+						valueString += field.value + `<br>`;
+						checkbox[field.name] = valueString;
+					} else if (field.type !== 'checkbox') {
+						valueString = field.value;
+						s[field.name] = valueString;
+						resultArray.push(s);
 					}
 				}
-			};
+			}
+
+			resultArray.push(checkbox);
+
+			for (let item of resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj]);
+				}
+			}
+
+			let xhr = new XMLHttpRequest();
 
 			xhr.open('POST', 'mail.php', true);
 			xhr.send(formData);
 
 			modalSend.classList.add('open');
 
-			event.target.reset();
+			target.reset();
 		});
 } catch {}
 

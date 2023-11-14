@@ -145,12 +145,6 @@
 		cursor: not-allowed;
 	}
 
-	&--active {
-		.link__svg {
-			background-image: url('@img/icons/sprite.svg#loading-circle');
-		}
-	}
-
 	@media (max-width: 768px) {
 		padding: 24px;
 		width: 100%;
@@ -682,10 +676,14 @@
 	}
 
 	&__current {
-		flex-basis: min-content;
+		flex-basis: fit-content;
 		border: none;
 		padding: 0;
 		cursor: pointer;
+
+		@media (max-width: 992px) {
+			flex-basis: 100%;
+		}
 	}
 
 	&__arrow {
@@ -747,10 +745,6 @@
 
 	&.is-active .select__arrow {
 		transform: rotate(180deg);
-	}
-
-	@media (max-width: 992px) {
-		display: none;
 	}
 }
 

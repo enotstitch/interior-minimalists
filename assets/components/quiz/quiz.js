@@ -68,9 +68,8 @@ const quizTemplate = (data = [], dataLength, options) => {
 					${answers.join('')}
 					<button type="button" class="quiz-question__send link btn-reset" data-send>
 						<span class="link__text">${sendBtnText}</span>
-						<svg class="link__svg">
-							<use href="img/icons/sprite.svg#arrow"></use>
-						</svg>
+						<div class="link__svg">
+						</div>
 					</button>
 					<label class="quiz-question__label">
 							<input class="quiz-question__checkbox-real" type="checkbox" data-valid="false">
@@ -99,7 +98,7 @@ const quizTemplate = (data = [], dataLength, options) => {
 				</div>
 				<div class="quiz-question__btns">
 				<button type="button" class="quiz-question__btn quiz-question__btn--margin btn-reset" data-next-btn>
-					<span>${nextBtnText}</span>
+					${nextBtnText}
 				</button>
 				</div>
 			</div>
@@ -175,8 +174,8 @@ class Quiz {
 				if (this.counter !== 0 && this.counter + 1 !== this.dataLength) {
 					const nextBtn = this.$el.querySelector('.quiz-question__btn');
 					nextBtn.outerHTML = `
-		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
-		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
+		      <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn>${this.options.prevBtnText}</button>
+		      <button type="button" class="quiz-question__btn btn-reset" data-next-btn="">${this.options.nextBtnText}</button>
 		      `;
 				}
 
@@ -194,8 +193,8 @@ class Quiz {
 		if (this.counter !== 0) {
 			const nextBtn = this.$el.querySelector('.quiz-question__btn');
 			nextBtn.outerHTML = `
-          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn><span>${this.options.prevBtnText}</span></button>
-          <button type="button" class="quiz-question__btn btn-reset" data-next-btn=""><span>${this.options.nextBtnText}</span></button>
+          <button type="button" class="quiz-question__btn quiz-question__btn--prev btn-reset" data-prev-btn>${this.options.prevBtnText}</button>
+          <button type="button" class="quiz-question__btn btn-reset" data-next-btn="">${this.options.nextBtnText}</button>
           `;
 		}
 	}
@@ -239,52 +238,52 @@ class Quiz {
 		this.resultArray.push(this.tmp);
 	}
 
-	  send() {
-    const modalSend = document.getElementById('modalSend');
-    let elements = this.$el.querySelectorAll('input');
-    let isValid = true;
-    elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
+	send() {
+		const modalSend = document.getElementById('modalSend');
+		let elements = this.$el.querySelectorAll('input');
+		let isValid = true;
+		elements.forEach((el) => el.classList.remove('quiz-question__label--error'));
 
-    elements.forEach((el) => {
-      switch (el.type) {
-        case 'text':
-          if (!el.value) isValid = false;
+		elements.forEach((el) => {
+			switch (el.type) {
+				case 'text':
+					if (!el.value) isValid = false;
 
-          break;
+					break;
 
-        case 'tel':
-          if (!el.value) isValid = false;
+				case 'tel':
+					if (!el.value) isValid = false;
 
-          break;
+					break;
 
-        case 'checkbox':
-          if (!el.checked) isValid = false;
+				case 'checkbox':
+					if (!el.checked) isValid = false;
 
-          break;
+					break;
 
-        default:
-      }
-    });
+				default:
+			}
+		});
 
-    if (isValid) {
-      const formData = new FormData();
+		if (isValid) {
+			const formData = new FormData();
 
-      for (let item of this.resultArray) {
-        for (let obj in item) {
-          formData.append(obj, item[obj].substring(0, item[obj].length - 2));
-        }
-      }
+			for (let item of this.resultArray) {
+				for (let obj in item) {
+					formData.append(obj, item[obj].substring(0, item[obj].length - 2));
+				}
+			}
 
-      const response = fetch('mail.php', {
-        method: 'POST',
-        body: formData,
-      });
+			const response = fetch('mail.php', {
+				method: 'POST',
+				body: formData,
+			});
 
-      modalSend.classList.add('open');
+			modalSend.classList.add('open');
 
-      this.$el.reset();
-    }
-  }
+			this.$el.reset();
+		}
+	}
 
 	serialize(form) {
 		let field,

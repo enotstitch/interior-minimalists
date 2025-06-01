@@ -1,6 +1,10 @@
 import { buildFolder } from '../config/path';
-import ghPages from 'gulp-gh-pages';
+import ghpages from 'gh-pages';
 
-export const git = () => {
-	return app.gulp.src(`${buildFolder}/**/*.*`).pipe(ghPages());
+export const git = (done) => {
+	ghpages.publish(buildFolder, (err) => {
+		if (err) console.log('Ошибка деплоя:', err);
+		else console.log('Деплой на GitHub Pages успешен!');
+		done();
+	});
 };
